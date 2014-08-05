@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @tip.title %>
+</p>
+
+<p>
+  <strong>Difficulty level:</strong>
+  <%= @tip.difficulty_level %>
+</p>
+
+<p>
+  <strong>Condition name:</strong>
+  <%= @tip.condition_name_id %>
+</p>
+
+<p>
+  <strong>Symptom name:</strong>
+  <%= @tip.symptom_name_id %>
+</p>
+
+<p>
+  <strong>Tip type:</strong>
+  <%= @tip.tip_type_id %>
+</p>
+
+<p>
+  <strong>What needed:</strong>
+  <%= @tip.what_needed %>
+</p>
+
+<p>
+  <strong>My tip:</strong>
+  <%= @tip.my_tip %>
+</p>
+
+<%= link_to 'Edit', edit_tip_path(@tip) %> |
+<%= link_to 'Back', tips_path %>

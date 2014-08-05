@@ -1,0 +1,39 @@
+<h1>Listing tips</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Difficulty level</th>
+      <th>Condition name</th>
+      <th>Symptom name</th>
+      <th>Tip type</th>
+      <th>What needed</th>
+      <th>My tip</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tips.each do |tip| %>
+      <tr>
+        <td><%= tip.title %></td>
+        <td><%= tip.difficulty_level %></td>
+        <td><%= tip.condition_name_id %></td>
+        <td><%= tip.symptom_name_id %></td>
+        <td><%= tip.tip_type_id %></td>
+        <td><%= tip.what_needed %></td>
+        <td><%= tip.my_tip %></td>
+        <td><%= link_to 'Show', tip %></td>
+        <td><%= link_to 'Edit', edit_tip_path(tip) %></td>
+        <td><%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tip', new_tip_path %>
