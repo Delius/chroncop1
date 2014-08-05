@@ -1,0 +1,25 @@
+<h3 class="text-center">Categories</h3>
+<div class="panel callout radius">
+  <h6>Conditions</h6>
+  <ul class="square">
+  <% @condition_names.each do |fp| %>
+    <li><%= link_to "#{fp.name}", tips_path(sort_by: { condition_name_id: fp.id }) %></li>
+  <% end %>
+  </ul>
+</div>
+<div class="panel callout radius">
+  <h6>Symptoms</h6>
+  <ul class="square">
+  <% @symptom_names.each do |ft| %>
+    <li><%= link_to "#{ft.name}", tips_path(sort_by: { symptom_name_id: ft.id }) %></li>
+  <% end %>
+  </ul>
+</div>
+<div class="panel callout radius">
+  <h6>Coping Startegies</h6>
+  <ul class="square">
+  <% @tip_types.each do |cu| %>
+    <li><%= link_to "#{cu.name}", tips_path(sort_by: { tip_type: cu.id }) %></li>
+  <% end %>
+  </ul>
+</div>

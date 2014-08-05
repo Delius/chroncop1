@@ -1,65 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Cronically Coping</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <a href="../" class="navbar-brand">Cronically Coping</a>
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-      <div class="navbar-collapse collapse" id="navbar-main">
-        <ul class="nav navbar-nav">
-         <!-- <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">DropDown <span class="caret"></span></a>
-            <ul class="dropdown-menu" aria-labelledby="themes">
-              <li><a tabindex="-1" href="/">Default</a></li>
-              <li class="divider"></li>
-              <li><a tabindex="-1" href="#/">Item 1</a></li>
-              <li><a tabindex="-1" href="#/">Item 2</a></li>
-              <li><a tabindex="-1" href="#/">Item 3</a></li>
-              <li><a tabindex="-1" href="#/">Item 4</a></li>
-              <li><a tabindex="-1" href="#/">Item 5</a></li>
-              <li><a tabindex="-1" href="#/">Item 6</a></li>
-
-            </ul>
-          </li>
-          <li>
-            <a href="">Help</a>
-          </li>
-        </ul>  -->
-
-        <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
-          <li><%= link_to current_user.name, current_user %></li>
-          <li><%= link_to "Logout", destroy_user_session_path %></li>
-          <% else %>
-          <li><%= link_to "Sign in", new_user_session_path %></li>
-          <% end %>
-        </ul>
-
-      </div>
-    </div>
-  </div>
-
-
-  <div class="container">
-   <div class="page-header" id="banner">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Chronically Coping" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Chronically Coping" %>">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'vendor/modernizr' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
     <div class="row">
-      <%= yield %>
+      <div class="large-centered-6 columns">
+        <%= render 'layouts/messages' %>
+      </div>
     </div>
-  </div>
-</div>
+    <main class="row">
+      <div class="large-3 columns">
+        <%= render 'layouts/categories' %>
+      </div>
+      <div class="large-9 columns">
+        <%= yield %>
 
-
-</body>
+      </div>
+    </main>
+  </body>
 </html>
+
+
+
