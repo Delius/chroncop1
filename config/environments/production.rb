@@ -60,12 +60,12 @@ SociaLoginRails::Application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings = {
-    :address 'smtp.1and1.com', 
+    address: 'smtp.1and1.com', 
     port: '25',
-    authentication: 'plain'
-    user_name=ENV["GMAIL_USERNAME"],
-    password=ENV["GMAIL_PASSWORD"]
-    domain=ENV["GMAIL_DOMAIN"],
+    authentication: 'plain',
+    user_name:ENV["GMAIL_USERNAME"],
+    password:ENV["GMAIL_PASSWORD"],
+    domain:ENV["GMAIL_DOMAIN"],
 
 
   } 

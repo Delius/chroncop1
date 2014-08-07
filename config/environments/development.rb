@@ -51,6 +51,6 @@ SociaLoginRails::Application.configure do
     domain:ENV["GMAIL_DOMAIN"],
 
 
-  } 
+  }  
 
 end
