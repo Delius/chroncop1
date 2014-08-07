@@ -26,4 +26,31 @@ SociaLoginRails::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+
+ # Prepend all log lines with the following tags.
+  # config.log_tags = [ :subdomain, :uuid ]
+
+  config.app_domain = 'http://thawing-lake-7709.herokuapp.com'
+  Rails.application.routes.default_url_options[:host] = 'thawing-lake-7709.herokuapp.com'
+  # Email
+  #config.action_mailer.delivery_method = :smtp
+  #config.action_mailer.perform_deliveries = true
+  #config.action_mailer.default_url_options = { host: config.app_domain }
+  config.action_mailer.default_url_options = { :host => 'thawing-lake-7709.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.1and1.com', 
+    port: '25',
+    authentication: 'plain',
+    user_name:ENV["GMAIL_USERNAME"],
+    password:ENV["GMAIL_PASSWORD"],
+    domain:ENV["GMAIL_DOMAIN"],
+
+
+  } 
+
 end
