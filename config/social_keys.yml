@@ -29,3 +29,7 @@ production:
 
   google_key: "YOUR_KEY"
   google_secret: "YOUR_SECRET"
+
+  GMAIL_DOMAIN: "thawing-lake-7709.herokuapp.com"
+  GMAIL_USERNAME: "support@chronicdiseases.org.uk"
+  GMAIL_PASSWORD: "22chaberek22"
