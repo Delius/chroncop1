@@ -3,7 +3,7 @@ SociaLoginRails::Application.routes.draw do
   resources :tips
 
   devise_for :admin_users, ActiveAdmin::Devise.config
-
+  get 'tags/:tag', to: 'tips#index', as: :tag
   get "pages/terms"
   get "pages/welcome"
   get "pages/landing"

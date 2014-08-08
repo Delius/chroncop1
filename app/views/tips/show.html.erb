@@ -2,9 +2,9 @@
 
 <p>
   <strong>Title:</strong>
-  <%= @tip.title %>
+  <div class="panel callout radius"><%= @tip.title %></div>
 </p>
-
+<div class="panel callout radius">
 <p>
   <strong>Difficulty level:</strong>
   <%= @tip.difficulty_level %>
@@ -24,15 +24,24 @@
   <strong>Tip type:</strong>
   <%= @tip.tip_type.name %>
 </p>
-
+</div>
+<div class="panel callout radius">
 <p>
   <strong>What needed:</strong>
   <%= @tip.what_needed %>
 </p>
-
+</div>
+<div class="panel callout radius">
 <p>
   <strong>My tip:</strong>
   <%= @tip.my_tip %>
+
+</p>
+</div>
+<p>
+  <strong>Tags:</strong>
+  <div class="panel callout radius"><%=raw @tip.tags.map(&:name).map { |t| t }.join(', ')%></div>
+  
 </p>
 
 <%= link_to 'Edit', edit_tip_path(@tip) %> |

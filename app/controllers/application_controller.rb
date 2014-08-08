@@ -9,6 +9,8 @@ before_filter do
   params[resource] &&= send(method) if respond_to?(method, true)
 end
 
+
+
 def sidebar_values
     @condition_names = ConditionName.all
     @symptom_names = SymptomName.all

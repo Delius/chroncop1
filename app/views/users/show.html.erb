@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
-
+<div class="panel callout radius">
 <p>
   <strong>Name:</strong>
+ <ul>
 	  <!--<%= (image_tag @user.image_url(:thumb).to_s) %> -->
-  <%= @user.name %>
+  <h2><%= @user.name %></h2></ul>
 </p>
-
-<%= link_to 'Edit', edit_user_path(@user) %>
+</div>
+<!-- <%= link_to 'Edit', edit_user_path(@user) %>  -->

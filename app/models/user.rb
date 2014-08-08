@@ -19,6 +19,18 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.create_with_omniauth(auth)
+create! do |user|
+user.provider = auth["provider"]
+user.uid = auth["uid"]
+user.name = auth["info"]["name"] || ""
+user.address = auth["info"]["location"] || ""
+user.avatar = auth["info"]["image"] || ""
+user.oauth_token = auth["credentials"]["token"] || ""
+user.oauth_secret = auth["credentials"]["secret"] || ""
+end
+end
+
   def self.from_omniauth(auth, current_user)
     authorization = Authorization.where(:provider => auth.provider, :uid => auth.uid.to_s, :token => auth.credentials.token, :secret => auth.credentials.secret).first_or_initialize
     if authorization.user.blank?
