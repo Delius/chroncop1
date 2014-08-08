@@ -17,7 +17,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'intercom-rails'
 gem 'taps'
 gem 'activeadmin', github: 'gregbell/active_admin'
-
+gem 'will_paginate', '3.0.4'
+gem 'bootstrap-will_paginate', '0.0.9'
 
 group :production do
   gem 'pg', '0.15.1'

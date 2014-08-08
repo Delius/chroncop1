@@ -5,11 +5,13 @@ class CreateTips < ActiveRecord::Migration
       t.string :difficulty_level
       t.integer :condition_name_id
       t.integer :symptom_name_id
+      t.integer :user_id
       t.integer :tip_type_id
       t.text :what_needed
       t.text :my_tip
 
       t.timestamps
     end
+    add_index :tips, [:user_id, :created_at]
   end
 end

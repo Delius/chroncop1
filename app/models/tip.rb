@@ -5,9 +5,8 @@ DIFFICULTY=%w(Easy Medium Hard)
 	belongs_to :tip_type
 	has_many :taggings
 	has_many :tags, through: :taggings
-	
 	validates_presence_of :title, :condition_name_id, :symptom_name_id, :tip_type_id
-
+  belongs_to :user, class_name: "User"
 
 def all_tags
     tags.map(&:name).join(", ")
@@ -26,7 +25,9 @@ def all_tags
   def self.tag_counts
     Tag.select("tags.name, count(taggings.tag_id) as count").joins(:taggings).group("taggings.tag_id")
   end
-
+def self.tip_owner(user_id)
+User.find_by id: user_id
+end
 
 
 end

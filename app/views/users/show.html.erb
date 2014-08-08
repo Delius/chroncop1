@@ -1,10 +1,18 @@
 <p id="notice"><%= notice %></p>
+
 <div class="panel callout radius">
 <p>
   <strong>Name:</strong>
  <ul>
+
 	  <!--<%= (image_tag @user.image_url(:thumb).to_s) %> -->
-  <h2><%= @user.name %></h2></ul>
-</p>
+  <h2> <%= @user.name %></h2></ul>
+  <% if user_signed_in? %>
+<%= link_to 'Edit', edit_user_path(@user) %>
+<% end %>
 </div>
-<!-- <%= link_to 'Edit', edit_user_path(@user) %>  -->
+  
+<!--List Recently Created Events-->
+
+
+

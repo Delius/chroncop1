@@ -1,0 +1,15 @@
+<div class="row">
+<div class="col-lg-8">
+<!--List Recently Created Events-->
+<h3>Recently Created Tips</h3>
+<% @tips.each do |tip| %>
+<h3><%= tip.title %></h3>
+<label>Created:</label><%= l tip.created_at,:format => :date_format %>
+<label>Organized By:</label><br/>
+<%@tip_owner = Tip.tip_owner(tip.user_id)%>
+<br/>
+<%end%><br/><br/>
+<% end %>
+</div>
+<%= render "tag_cloud"%>
+<br>
