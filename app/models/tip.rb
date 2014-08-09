@@ -6,8 +6,9 @@ DIFFICULTY=%w(Easy Medium Hard)
 	has_many :taggings
 	has_many :tags, through: :taggings
 	validates_presence_of :title, :condition_name_id, :symptom_name_id, :tip_type_id
-  belongs_to :user, class_name: "User"
-
+  belongs_to :user
+  validates :user_id, presence: true
+  
 def all_tags
     tags.map(&:name).join(", ")
   end

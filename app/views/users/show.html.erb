@@ -11,6 +11,15 @@
 <%= link_to 'Edit', edit_user_path(@user) %>
 <% end %>
 </div>
+
+<div >
+    <% if @user.tips.any? %>
+      <h3>Tips to date (<%= @user.tips.count %>)</h3>
+
+     <%= render @tips  %>
+           
+    <% end %>
+  </div>
   
 <!--List Recently Created Events-->
 

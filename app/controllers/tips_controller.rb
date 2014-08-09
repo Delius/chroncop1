@@ -11,13 +11,13 @@ class TipsController < ApplicationController
     end
   end
 
+
+
   def my_tips
-@tips = current_user.tips
+@tips = current_user.tips.all? { |e|  }
 end
 
-def show
-@tip_owner = @tip.users
-end
+
 # def index
 #     if params[:tag]
 #       @tips = Tip.tagged_with(params[:tag])

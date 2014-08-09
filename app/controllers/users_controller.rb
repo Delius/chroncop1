@@ -10,9 +10,11 @@ class UsersController < ApplicationController
   # GET /users/1
   def show
     @user = User.find(params[:id])
+    @tips = @user.tips
   end
 
-   
+ 
+
   def index
     @users = User.paginate(page: params[:page])
   end
@@ -51,7 +53,7 @@ private
 
 
 def user_params
-  params.require(:user).permit(:id,:name,:about, :avatar,:email, :password,:password_confirmation)
+  params.require(:user ).permit(:id,:name,:about, :avatar,:email, :password,:password_confirmation)
 end
 # Before filters
 

@@ -9,6 +9,7 @@ SociaLoginRails::Application.routes.draw do
   get "pages/landing"
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   resources :users
+  resources :tips
   get :my_tips, to: 'tips#my_tips', as: 'my_tips'
   
   # resources :sessions, only: [:new, :create, :destroy]
