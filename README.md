@@ -1,0 +1,1 @@
+Chronically coping is a social website project <a href="http://thawing-lake-7709.herokuapp.com/">Chronically Coping</a>
