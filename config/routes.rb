@@ -1,5 +1,6 @@
 SociaLoginRails::Application.routes.draw do
 
+  get "home/index"
   resources :tips
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -18,9 +19,7 @@ SociaLoginRails::Application.routes.draw do
   # match '/signin',  to: 'sessions#new',         via: 'get'
   # match '/signout', to: 'sessions#destroy',     via: 'delete'
 
-resources :tips do
-  member { post :vote }
-end
+  get "home/fetch_friend_data"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

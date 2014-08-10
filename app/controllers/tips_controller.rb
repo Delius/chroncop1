@@ -25,6 +25,10 @@ end
 
 
 
+
+
+
+
   # GET /tips/1
   # GET /tips/1.json
   def show
@@ -42,8 +46,14 @@ end
   # POST /tips
   # POST /tips.json
   def create
+    # client = Twitter::REST::Client.new do |config|
+    # config.consumer_key= "Bdyx2U1waoNMEXn78nGdd14t"
+    # config.consumer_secret="0YPMNPd7V4p36Zzj5xzBfweVqPS4IhOdlE99Txun1eW2giGO6C"
+    # config.access_token= "168429845-anokGzKl2dUM4iTpN44KfTpVmtvZGQlJMUt6hqZT"
+    # config.access_token_secret = "gQEWaSpTfRtvWdXwhqCXzsiKZYTihIh23j0skbo5tzT73"
+    # end
     @tip = current_user.tips.new(tip_params)
-
+    # client.update(@tip.title)
     respond_to do |format|
       if @tip.save
         format.html { redirect_to @tip, notice: 'Tip was successfully created.' }
