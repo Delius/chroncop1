@@ -17,7 +17,7 @@
   <tbody>
     
       <tr>
-        <td ><%= tip.title %></td>
+      
         
         <td><%= tip.condition_name.name %></td>
         <td><%= tip.symptom_name.name %></td>
@@ -27,10 +27,11 @@
        
         <td><%= link_to 'Show', tip, class: 'button tiny radius success' %>
   <% if user_signed_in? %>
+  <% if tip.user == current_user %>
           <%= link_to 'Edit', edit_tip_path(tip), class: 'button tiny radius success' %>
           <%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button tiny radius alert' %></td>
         <% end %>
-
+<% end %>
    
       </tr>
     

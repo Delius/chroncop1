@@ -11,7 +11,7 @@ gem 'sass-rails', '~> 4.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-
+# gem 'protected_attributes'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 gem 'intercom-rails'
@@ -19,6 +19,8 @@ gem 'taps'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
+# gem 'activerecord-reputation-system', require: 'reputation_system'
+
 
 group :production do
   gem 'pg', '0.15.1'

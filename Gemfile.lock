@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: efe5a86968c81fd12244e6c4b6957d93d0a4b7ee
+  revision: ac85139e308d26cc5706e0f431ea07553fff45d5
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0)
@@ -150,7 +150,7 @@ GEM
       activesupport (>= 3.2, < 5)
     hashie (3.2.0)
     hike (1.2.3)
-    http (0.6.1)
+    http (0.6.2)
       http_parser.rb (~> 0.6.0)
     http_parser.rb (0.6.0)
     i18n (0.6.11)
@@ -214,8 +214,8 @@ GEM
     omniauth (1.2.2)
       hashie (>= 1.2, < 4)
       rack (~> 1.0)
-    omniauth-facebook (1.6.0)
-      omniauth-oauth2 (~> 1.1)
+    omniauth-facebook (2.0.0)
+      omniauth-oauth2 (~> 1.2)
     omniauth-github (1.1.2)
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.1)
@@ -354,7 +354,7 @@ GEM
       memoizable (~> 0.4.0)
       naught (~> 1.0)
       simple_oauth (~> 0.2.0)
-    tzinfo (0.3.40)
+    tzinfo (0.3.41)
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)

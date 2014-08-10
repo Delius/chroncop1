@@ -9,6 +9,14 @@ DIFFICULTY=%w(Easy Medium Hard)
   belongs_to :user
   validates :user_id, presence: true
   
+
+
+
+
+
+
+
+
 def all_tags
     tags.map(&:name).join(", ")
   end

@@ -18,13 +18,12 @@ class TipsController < ApplicationController
 end
 
 
-# def index
-#     if params[:tag]
-#       @tips = Tip.tagged_with(params[:tag])
-#     else
-#       @tips = Tip.all
-#     end
-#   end
+
+
+
+
+
+
 
   # GET /tips/1
   # GET /tips/1.json
@@ -88,6 +87,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tip_params
-      params.require(:tip).permit(:title, :difficulty_level, :condition_name_id, :symptom_name_id, :tip_type_id, :what_needed, :my_tip, :all_tags,:user_id)
+      params.require(:tip).permit(:title, :votes, :difficulty_level, :condition_name_id, :symptom_name_id, :tip_type_id, :what_needed, :my_tip, :all_tags,:user_id, )
     end
 end

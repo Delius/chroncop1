@@ -1,27 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <div class="panel callout radius">
-<p>
-  <strong>Name:</strong>
- <ul>
+	<p>
+		<strong>Name:</strong>
+		<ul>
 
-	  <!--<%= (image_tag @user.image_url(:thumb).to_s) %> -->
-  <h2> <%= @user.name %></h2></ul>
-  <% if user_signed_in? %>
-<%= link_to 'Edit', edit_user_path(@user) %>
-<% end %>
+			<!--<%= (image_tag @user.image_url(:thumb).to_s) %> -->
+			<h2> <%= @user.name %></h2></ul>
+			<% if user_signed_in? %>
+			<% if current_user == @user %>
+			<%= link_to 'Edit', edit_user_path(@user) %>
+			<% end %>
+			<% end %>
+		</div>
+
+		<div >
+			<% if @user.tips.any? %>
+			<h3>Tips to date (<%= @user.tips.count %>)</h3>
+
+			<%= render @tips  %>
+
+			<% end %>
+		</div>
+
+		<!--List Recently Created Events-->
+
+
 </div>
-
-<div >
-    <% if @user.tips.any? %>
-      <h3>Tips to date (<%= @user.tips.count %>)</h3>
-
-     <%= render @tips  %>
-           
-    <% end %>
-  </div>
-  
-<!--List Recently Created Events-->
-
-
-
