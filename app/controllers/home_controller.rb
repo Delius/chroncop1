@@ -6,13 +6,14 @@ class HomeController < ApplicationController
 		config.access_token= ENV["TWITTER_TOKEN"]
 		config.access_token_secret = ENV["TWITTER_TOKEN_SECRET"]
 		end
+		
 		@friends = client.friends.take(20)
 
 
 
 	@friends.each do |f|
 		location = f.location
-		# Friend.get_friend_data(f,location,user_id)
+		 Friend.get_friend_data(friend,location,user_id)
 	end
 
 	

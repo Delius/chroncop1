@@ -1,3 +1,5 @@
+
+
 class TipsController < ApplicationController
   before_action :set_tip, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
@@ -19,16 +21,6 @@ end
 
 
 
-
-
-
-
-
-
-
-
-
-
   # GET /tips/1
   # GET /tips/1.json
   def show
@@ -45,15 +37,24 @@ end
 
   # POST /tips
   # POST /tips.json
+
+
+
   def create
-     client = Twitter::REST::Client.new do |config|
+
+       client = Twitter::REST::Client.new do |config|
      config.consumer_key= ENV["TWITTER_KEY"]
      config.consumer_secret= ENV["TWITTER_SECRET"]
-     config.access_token= "168429845-anokGzKl2dUM4iTpN44KfTpVmtvZGQlJMUt6hqZT"
-     config.access_token_secret = "gQEWaSpTfRtvWdXwhqCXzsiKZYTihIh23j0skbo5tzT73"
+     config.access_token= ENV["TWITTER_TOKEN"]
+     config.access_token_secret = ENV["TWITTER_TOKEN_SECRET"]
      end
-    @tip = current_user.tips.new(tip_params)
-     client.update(@tip.title)
+
+web_url = Rails.application.routes.url_helpers.tips_url(:host => 'thawing-lake-7709.herokuapp.com' )
+#---------------------------------------
+   @tip = current_user.tips.new(tip_params)
+     client.update( "I just shared  "  "#{@tip.title} tip @ #{web_url}")
+# supportpost_url = Rails.application.routes.url_helpers.url_for :action => :show, :controller => 'supportposts', :id => self, :host => 'example.com'
+
     respond_to do |format|
       if @tip.save
         format.html { redirect_to @tip, notice: 'Tip was successfully created.' }
@@ -97,6 +98,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tip_params
-      params.require(:tip).permit(:title, :votes, :difficulty_level, :condition_name_id, :symptom_name_id, :tip_type_id, :what_needed, :my_tip, :all_tags,:user_id, )
+      params.require(:tip).permit(:title, :votes, :difficulty_level, :condition_name_id, :symptom_name_id, :tip_type_id, :what_needed, :my_tip, :all_tags,:user_id,:tips_url )
     end
 end
