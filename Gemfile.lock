@@ -69,6 +69,8 @@ GEM
     better_errors (1.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bootstrap-sass (3.1.0.2)
       sass (~> 3.2)
     bootstrap-sass-rails (3.1.0.0)
@@ -121,6 +123,7 @@ GEM
       rails (>= 3, < 5)
     daemons (1.1.9)
     database_cleaner (1.3.0)
+    debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     devise (3.2.4)
       bcrypt (~> 3.0)
@@ -381,6 +384,7 @@ DEPENDENCIES
   activeadmin!
   airbrake
   better_errors
+  binding_of_caller
   bootstrap-sass-rails
   bootstrap-will_paginate (= 0.0.9)
   byebug

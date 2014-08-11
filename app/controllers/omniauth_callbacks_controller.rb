@@ -1,4 +1,5 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+    
     skip_before_filter :verify_authenticity_token, :only => :create
 	#skip_before_filter :authenticate_user!
 	def all

@@ -13,7 +13,7 @@ class HomeController < ApplicationController
 
 	@friends.each do |f|
 		location = f.location
-		 Friend.get_friend_data(friend,location,user_id)
+		 Friend.get_friend_data(f,@user.id)
 	end
 
 	
