@@ -18,6 +18,7 @@
 
   <tbody>
     <% @tips.each do |tip| %>
+
       <tr>
         <td ><%= tip.title %></td>
         
@@ -32,13 +33,20 @@
   <% if tip.user == current_user %>
           <%= link_to 'Edit', edit_tip_path(tip), class: 'button tiny radius success' %>
           <%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button tiny radius alert' %></td>
+         
+
+
+
+       
         <% end %>
+
 <% end %>
    
       </tr>
     <% end %>
     
   </tbody>
+    <div class="fb-like" data-href="https://www.facebook.com/pages/FibroTrust/482527011777039" data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="true"></div>
 </table>
 
 
