@@ -20,12 +20,12 @@
       
 
       <td><% for tag in tip.tags %>
-<%= link_to tag.name, tag_posts_path(tag.name) %>
+ <%= link_to tag.name, tagged_url(:tag => tag.name) %>
 <% end %></td>
 
 
       <td><%= link_to 'Show', tip, class: 'button tiny radius success' %>
-        # <% if user_signed_in? %>
+         <% if user_signed_in? %>
         <!-- displays delete and edit buttons to a current user -->
         <% if tip.user == current_user %>
         <%= link_to 'Edit', edit_tip_path(tip), class: 'button tiny radius success' %>
