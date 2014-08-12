@@ -1,11 +1,16 @@
 SociaLoginRails::Application.routes.draw do
 
+
+
   get "home/index"
   resources :tips
+  root :to => "tips#index"
 
+  
+  ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
   match 'tagged', to: 'tips#index', :as => 'tagged', via: 'get'
-  get 'tags/:tag', to: 'tips#index', as: :tag
+  match 'tags/:tag', to: 'tips#index', as:  :tag , via: 'get'
   get "pages/terms"
   get "pages/welcome"
   get "pages/landing"
@@ -28,8 +33,7 @@ SociaLoginRails::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root to: 'tips#index'
-  ActiveAdmin.routes(self)
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
