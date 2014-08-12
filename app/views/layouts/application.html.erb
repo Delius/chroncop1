@@ -1,42 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=318980918202032&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Chronically Coping" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Chronically Coping" %>">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'vendor/modernizr' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <div id="fb-root"></div>
 
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-    <div class="row">
-      <div class="large-centered-6 columns">
-        <%= render 'layouts/messages' %>
-      </div>
+<head>
+
+  <!-- facebook 'like' head script  -->
+  
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=318980918202032&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+  <!-- site title and description -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= content_for?(:title) ? yield(:title) : "Chronically Coping" %></title>
+  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Chronically Coping" %>">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'vendor/modernizr' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+  <div id="fb-root"></div>
+
+<!-- navigation bar -->
+
+  <header>
+    <%= render 'layouts/navigation' %>
+  </header>
+
+<!-- main content -->
+
+  <div class="row">
+    <div class="large-centered-6 columns">
+      <%= render 'layouts/messages' %>
     </div>
-    <main class="row">
-      <div class="large-3 columns">
-        <%= render 'layouts/categories' %>
-      </div>
-      <div class="large-9 columns">
-        <%= yield %>
+  </div>
 
-      </div>
-    </main>
-  </body>
+<!-- sidebar -->
+
+  <main class="row">
+    <div class="large-3 columns">
+      <%= render 'layouts/categories' %>
+    </div>
+    <div class="large-9 columns">
+      <%= yield %>
+    </div>
+  </main>
+
+</body>
+
 </html>
 
 
