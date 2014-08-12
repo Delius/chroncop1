@@ -5,7 +5,7 @@ SociaLoginRails::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   match 'tagged', to: 'tips#index', :as => 'tagged', via: 'get'
-
+  get 'tags/:tag', to: 'tips#index', as: :tag
   get "pages/terms"
   get "pages/welcome"
   get "pages/landing"

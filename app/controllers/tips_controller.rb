@@ -10,17 +10,18 @@ class TipsController < ApplicationController
   def index
 
     if params[:sort_by].blank?
-      @tips = Tip.all
+      @tips = Tip.tagged_with(params[:tag])
     
-    else
-      if params[:tag]
-       
+    
       else
         @tips = Tip.where(params[:sort_by])
       end
-    end
+    
   end
 
+def tag_cloud
+    @tags = Tip.tag_counts_on(:tags)
+  end
 
 
   def my_tips
@@ -130,6 +131,6 @@ private
     # Never trust parameters from the scary internet, only allow the white list through.
     def tip_params
       params.require(:tip).permit(:title, :votes, :difficulty_level, :condition_name_id, 
-        :symptom_name_id, :tip_type_id, :what_needed, :my_tip, :user_id,:tips_url ,:tag_list )
+        :symptom_name_id, :tip_type_id, :what_needed, :my_tip, :user_id,:tips_url ,:tag_list, :tag )
     end
   end
