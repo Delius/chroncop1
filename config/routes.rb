@@ -4,22 +4,25 @@ SociaLoginRails::Application.routes.draw do
   resources :tips
 
   devise_for :admin_users, ActiveAdmin::Devise.config
-  get 'tags/:tag', to: 'tips#index', as: :tag
+  match 'tagged', to: 'tips#index', :as => 'tagged', via: 'get'
+
   get "pages/terms"
   get "pages/welcome"
   get "pages/landing"
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   resources :users
-  resources :tips
   get :my_tips, to: 'tips#my_tips', as: 'my_tips'
   
+
+
+
   # resources :sessions, only: [:new, :create, :destroy]
   
   # match '/signup',  to: 'users#new',            via: 'get'
   # match '/signin',  to: 'sessions#new',         via: 'get'
   # match '/signout', to: 'sessions#destroy',     via: 'delete'
 
-  get "home/fetch_friend_data"
+ 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

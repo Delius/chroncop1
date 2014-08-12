@@ -40,7 +40,12 @@
 </div>
 <p>
   <strong>Tags:</strong>
-  <div class="panel callout radius"><%=raw @tip.tags.map(&:name).map { |t| t }.join(', ')%></div>
+ <% @tip.tags.any? %>
+  <% @tip.tags.each do |tag| %>
+  <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+<% end %>
+
+  </div>
      <div class='spread'>  <div class='twshare left'>   <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="fibrotr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>  </div>  
   <div class="fb-like" data-href="https://www.facebook.com/pages/FibroTrust/482527011777039" data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="true"></div>
 </p>

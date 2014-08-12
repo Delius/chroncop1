@@ -17,7 +17,13 @@
     <tr>
       <td><%= tip.condition_name.name %></td>
       <td><%= tip.symptom_name.name %></td>
-      <td><%=raw tip.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></td>
+      
+
+      <td><% for tag in tip.tags %>
+<%= link_to tag.name, tag_posts_path(tag.name) %>
+<% end %></td>
+
+
       <td><%= link_to 'Show', tip, class: 'button tiny radius success' %>
         # <% if user_signed_in? %>
         <!-- displays delete and edit buttons to a current user -->
