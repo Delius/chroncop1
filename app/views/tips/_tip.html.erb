@@ -1,47 +1,37 @@
+<!-- this is part of profile view listing user Tips -->
 <table>
 
   <thead >
-    
-
 
     <tr>
       <th>TIP TITLE  </th>
       
       <th>Condition name </th>
-      <th>Category</th>
-      
-      <th ></th>
+      <th>Tag</th>
+      <th >---------------</th>
     </tr>
   </thead>
 
   <tbody>
-    
-      <tr>
-      
-        
-        <td><%= tip.condition_name.name %></td>
-        <td><%= tip.symptom_name.name %></td>
-        <td><%=raw tip.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></td>
-       
-        
-       
-        <td><%= link_to 'Show', tip, class: 'button tiny radius success' %>
-  <% if user_signed_in? %>
-  <% if tip.user == current_user %>
-          <%= link_to 'Edit', edit_tip_path(tip), class: 'button tiny radius success' %>
-          <%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button tiny radius alert' %></td>
+    <!-- displays table for user tips -->
+    <tr>
+      <td><%= tip.condition_name.name %></td>
+      <td><%= tip.symptom_name.name %></td>
+      <td><%=raw tip.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></td>
+      <td><%= link_to 'Show', tip, class: 'button tiny radius success' %>
+        # <% if user_signed_in? %>
+        <!-- displays delete and edit buttons to a current user -->
+        <% if tip.user == current_user %>
+        <%= link_to 'Edit', edit_tip_path(tip), class: 'button tiny radius success' %>
+        <%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button tiny radius alert' %></td>
         <% end %>
-<% end %>
-   <div class="fb-like" data-href="https://www.facebook.com/pages/FibroTrust/482527011777039" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-
-
-
+        <% end %>
       </tr>
-    
-    
-  </tbody>
-</table>
 
 
-        
+    </tbody>
+  </table>
+
+
+
   
