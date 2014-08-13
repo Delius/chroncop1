@@ -24,11 +24,4 @@
   <% end %>
   </ul>
 </div>
-<div class="panel callout radius">
-  <h6>Coping Startegies</h6>
-  <ul class="square">
-  <% @tip_types.each do |cu| %>
-    <li><%= link_to "#{cu.name}", tips_path(sort_by: { tip_type: cu.id }) %></li>
-  <% end %>
-  </ul>
-</div>
+
