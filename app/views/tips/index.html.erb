@@ -14,7 +14,7 @@
       
       <th>Condition name </th>
       <th>Category</th>
-      
+      <th>Tag Name</th>
       <th ></th>
     </tr>
   </thead>
@@ -28,7 +28,9 @@
         <td><%= tip.condition_name.name %></td>
         <td><%= tip.symptom_name.name %></td>
 
-        <td><%= tip.tag_list %></td>
+        <td><% for tag in tip.tags %>
+ <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+<% end %></td>
        
         
        

@@ -12,32 +12,41 @@
     </tr>
   </thead>
 
-  <tbody>
-    <!-- displays table for user tips -->
-    <tr>
-      <td><%= tip.condition_name.name %></td>
-      <td><%= tip.symptom_name.name %></td>
-      
+     <tbody>
+     
 
-      <td><% for tag in tip.tags %>
- <%= link_to tag.name, tagged_url(:tag => tag.name) %>
-<% end %></td>
+      <tr>
+        <td ><%= tip.title %></td>
+        
+        <td><%= tip.condition_name.name %></td>
+        <td><%= tip.symptom_name.name %></td>
 
-
-      <td><%= link_to 'Show', tip, class: 'button tiny radius success' %>
-         <% if user_signed_in? %>
-        <!-- displays delete and edit buttons to a current user -->
-        <% if tip.user == current_user %>
-        <%= link_to 'Edit', edit_tip_path(tip), class: 'button tiny radius success' %>
-        <%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button tiny radius alert' %></td>
-        <% end %>
-        <% end %>
-      </tr>
-
-
-    </tbody>
-  </table>
+        <td><% for tag in tip.tags %>
+         <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+         <% end %></td>
+         
+         
+         
+         <td><%= link_to 'Show', tip, class: 'button tiny radius success' %>
+          <% if user_signed_in? %>
+          <% if tip.user == current_user %>
+          <%= link_to 'Edit', edit_tip_path(tip), class: 'button tiny radius success' %>
+          <%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button tiny radius alert' %></td>
+          
 
 
 
-  
+          
+          <% end %>
+
+          <% end %>
+          
+        </tr>
+        
+        
+      </tbody>
+   </table>
+
+
+
+

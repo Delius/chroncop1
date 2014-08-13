@@ -2,54 +2,58 @@
 
 <p>
   <strong>Title:</strong>
-  <div class="panel callout radius"><%= @tip.title %></div>
+  <div class="panel callout radius"><h2><%= @tip.title %></h2></div>
 </p>
 <div class="panel callout radius">
-<p>
-  <strong>Difficulty level:</strong>
-  <%= @tip.difficulty_level %>
-</p>
+  <!-- <p>
+    <strong>Difficulty level:</strong>
+    <%= @tip.difficulty_level %>
+  </p> -->
 
-<p>
-  <strong>Condition name:</strong>
-  <%= @tip.condition_name.name %>
-</p>
+  <p>
+    <strong>Condition name:</strong>
+    <%= @tip.condition_name.name %>
+  </p>
 
-<p>
-  <strong>Symptom name:</strong>
-  <%= @tip.symptom_name.name %>
-</p>
+  <p>
+    <strong>Symptom name:</strong>
+    <%= @tip.symptom_name.name %>
+  </p>
 
-<p>
-  <strong>Tip type:</strong>
-  <%= @tip.tip_type.name %>
-</p>
+ 
 </div>
 <div class="panel callout radius">
-<p>
-  <strong>What needed:</strong>
-  <%= @tip.what_needed %>
-</p>
+  <p>
+    <strong>What needed:</strong>
+    <%= @tip.what_needed %>
+  </p>
 </div>
 <div class="panel callout radius">
-<p>
-  <strong>My tip:</strong>
-  <%= @tip.my_tip %>
+  <p>
+    <strong>My tip:</strong>
+    <%= @tip.my_tip %>
 
-</p>
+  </p>
 </div>
 <p>
-  <strong>Tags:</strong>
- <% @tip.tags.any? %>
-  <% @tip.tags.each do |tag| %>
-  <%= link_to tag.name, tagged_url(:tag => tag.name) %>
-<% end %>
+  <div class="panel callout radius">
+  <div class="panel callout radius">
+    <strong>Tags:</strong>
+    <% @tip.tags.any? %>
+    <% @tip.tags.each do |tag| %>
+    <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+    <% end %>
 
   </div>
-     <div class='spread'>  <div class='twshare left'>   <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="fibrotr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>  </div>  
-  <div class="fb-like" data-href="https://www.facebook.com/pages/FibroTrust/482527011777039" data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="true"></div>
-</p>
+
+  <div>
+<div class="panel callout radius">
+  <div class='spread'>  <div class='twshare left'>   <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="fibrotr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>  
+  </div>  
+  <div class="fb-like" data-href="https://www.facebook.com/pages/FibroTrust/482527011777039" data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="true"></div></div>
+  
+</div>   <%= link_to 'Edit', edit_tip_path(@tip) %> |
+    <%= link_to 'Back', tips_path %>
 
 
-<%= link_to 'Edit', edit_tip_path(@tip) %> |
-<%= link_to 'Back', tips_path %>
+</div>
