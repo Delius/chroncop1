@@ -65,7 +65,7 @@ def create
  end
 # web link adress to be inserted in tweet post aftet tip creation
 
-web_url = Rails.application.routes.url_helpers.tips_url(:host => 'thawing-lake-7709.herokuapp.com' )
+web_url = Rails.application.routes.url_helpers.tips_url(:host => 'chronicillnesses.co.uk' )
 @tip = current_user.tips.new(tip_params)
 
 # posts a tweet to twitter
