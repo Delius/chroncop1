@@ -4,23 +4,23 @@
 
   <thead >
 
-<div class="panel callout radius"> <h5>Choose a <%= link_to "Tag",   tags_path %> or
-  <%= link_to "Condition",   conditions_path %>  or  <%= link_to "Symptom",   symptoms_path %>  to look for Tips</h5>  </div>
-    
-
-
-    <tr>
-      <th>TIP TITLE  </th>
+    <div class="panel callout radius"> <h5>Choose a <%= link_to "Tag",   tags_path %> or
+      <%= link_to "Condition",   conditions_path %>  or  <%= link_to "Symptom",   symptoms_path %>  to look for Tips</h5>  </div>
       
-      <th>Condition name </th>
-      <th>Category</th>
-      <th>Tag Name</th>
-      <th ></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @tips.each do |tip| %>
+
+      <tr>
+        <th>TIP TITLE  </th>
+        
+        <th>Condition name </th>
+        <th>Category</th>
+        <th>Tag Name</th>
+        <th ></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @tips.each do |tip| %>
 
       <tr>
         <td ><%= tip.title %></td>
@@ -29,35 +29,35 @@
         <td><%= tip.symptom_name.name %></td>
 
         <td><% for tag in tip.tags %>
- <%= link_to tag.name, tagged_url(:tag => tag.name) %>
-<% end %></td>
-       
-        
-       
-        <td><%= link_to 'Show', tip, class: 'button tiny radius success' %>
-  <% if user_signed_in? %>
-  <% if tip.user == current_user %>
+         <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+         <% end %></td>
+         
+         
+         
+         <td><%= link_to 'Show', tip, class: 'button tiny radius success' %>
+          <% if user_signed_in? %>
+          <% if tip.user == current_user %>
           <%= link_to 'Edit', edit_tip_path(tip), class: 'button tiny radius success' %>
           <%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button tiny radius alert' %></td>
-         
+          
 
 
 
-       
+          
+          <% end %>
+
+          <% end %>
+          
+        </tr>
         <% end %>
-
-<% end %>
-   
-      </tr>
-    <% end %>
-    
-  </tbody>
-    <div class="fb-like" data-href="https://www.facebook.com/pages/FibroTrust/482527011777039" data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="true"></div>
-</table>
+        
+      </tbody>
+      <div class="fb-like" data-href="https://www.facebook.com/pages/FibroTrust/482527011777039" data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="true"></div>
+    </table>
 
 
-<%= link_to 'Share your Tip', new_tip_path, class: 'button  radius success' %>
+    <%= link_to 'Share your Tip', new_tip_path, class: 'button  radius success' %>
 
-<br>
+    <br>
 
 

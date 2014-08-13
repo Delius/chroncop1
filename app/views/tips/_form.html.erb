@@ -16,7 +16,7 @@
     <%= f.text_field :title %>
   </div>
  <div class="form-group">
-<%= f.label :difficulty_level %><br>
+<%= f.label :Is_it_difficult_? %><br>
 <%=f.select :difficulty_level, Tip::DIFFICULTY,{} ,
 :class => "form-control"%>
 </div>
@@ -32,18 +32,13 @@
   options_from_collection_for_select(SymptomName.all, :id, :name),
   {:prompt => 'Please Choose'}, :class => "form-control") %>
   </div>
-  <div class="form-group">
-    <%= f.label :tip_type_id %><br>
-    <%= f.select( :tip_type_id,
-        options_from_collection_for_select(TipType.all, :id, :name),
-        {:prompt => 'Please Choose'}, :class => "form-control") %>
-  </div>
+ 
   <div class="field">
-    <%= f.label :what_needed %><br>
+    <%= f.label :what_is_needed_? %><br>
     <%= f.text_area :what_needed %>
   </div>
   <div class="field">
-    <%= f.label :my_tip %><br>
+    <%= f.label :my_tip %>  [ tip description ] <br>
     <%= f.text_area :my_tip %>
   </div>
   <div class="field">
