@@ -1,1 +1,1 @@
-Chronically coping is a social website project <a href="http://thawing-lake-7709.herokuapp.com/">Chronically Coping</a> for <a href="http://fibrotrust.org">fibromyalgia trust</a> with <a href="http://bigera.co.uk">BigEra ltd </a>
+Chronically coping is a social website project <a href="http://sleepy-plateau-3790.herokuapp.com/">Chronically Coping</a> for <a href="http://fibrotrust.org">fibromyalgia trust</a> with <a href="http://bigera.co.uk">BigEra ltd </a>
