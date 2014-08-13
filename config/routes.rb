@@ -4,14 +4,14 @@ SociaLoginRails::Application.routes.draw do
 
   get "home/index"
   resources :tips
-  root :to => "pages#landing"
+  root :to => "tips#index"
 
   
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
   match 'tagged', to: 'tips#index', :as => 'tagged', via: 'get'
   match 'tags/:tag', to: 'tips#index', as:  :tag , via: 'get'
-  match 'tags', to: 'tags#index', as:  :tip_type , via: 'get'
+  # match 'tags', to: 'tags#index', as:  :tip_type , via: 'get'
   get "pages/terms"
   get "pages/welcome"
   get "pages/landing"
