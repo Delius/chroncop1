@@ -1,0 +1,11 @@
+<div class="panel callout radius">
+  <h1>Conditions</h1>
+
+</div>
+<div class="panel callout radius">
+  <ul class="tag-cloud">
+  <% @condition_names.each do |fp| %>
+   [  <%= link_to "#{fp.name}", tips_path(sort_by: { condition_name_id: fp.id }) %> ]
+  <% end %>
+  </ul>
+</div>

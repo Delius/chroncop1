@@ -14,7 +14,10 @@ SociaLoginRails::Application.routes.draw do
   # match 'tags', to: 'tags#index', as:  :tip_type , via: 'get'
   get "pages/terms"
   get "pages/welcome"
-  get "pages/landing"
+  get "pages/tags"
+  match '/tags', to: 'pages#tags', via: 'get'
+  match '/conditions', to: 'pages#conditions', via: 'get'
+  match '/symptoms', to: 'pages#symptoms', via: 'get'
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   resources :users
   get :my_tips, to: 'tips#my_tips', as: 'my_tips'

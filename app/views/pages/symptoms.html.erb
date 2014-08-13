@@ -1,0 +1,12 @@
+<div class="panel callout radius">
+
+<h1>Symptoms</h1>
+</div>
+<div class="panel callout radius">
+ 
+  <ul class="square">
+  <% @symptom_names.each do |ft| %>
+    [ <%= link_to "#{ft.name}", tips_path(sort_by: { symptom_name_id: ft.id }) %> ]
+  <% end %>
+  </ul>
+</div>

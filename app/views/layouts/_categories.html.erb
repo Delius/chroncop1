@@ -1,16 +1,6 @@
 <h3 class="text-center">Categories</h3>
 
-<div class="panel callout radius">
 
-
-
-<h6>Tags</h6>
-<div id="tag_cloud">
-  <% tag_cloud Tip.tag_counts, %w[css1 css2 css3 css4] do |tag, css_class| %>
-    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-  <% end %>
-</div>
-</div>
 
 <div class="panel callout radius">
   <h6>Conditions</h6>

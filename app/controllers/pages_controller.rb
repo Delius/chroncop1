@@ -7,4 +7,10 @@ class PagesController < ApplicationController
 
   def landing
   end
+  def tags
+  end
+  def conditions
+  end
+  def symptoms
+  end
 end
