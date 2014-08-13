@@ -19,6 +19,8 @@ class TipsController < ApplicationController
     
   end
 
+  
+
 def tag_cloud
     @tags = Tip.tag_counts_on(:tags)
   end
