@@ -17,13 +17,14 @@
   </thead>
 
   <tbody>
-    <% @tips.each do |tip| %>
+    
 
       <tr>
         <td ><%= tip.title %></td>
         
         <td><%= tip.condition_name.name %></td>
         <td><%= tip.symptom_name.name %></td>
+        <td><%= tip.tip_type.name %></td>
         <td><%= tip.tag_list %></td>
        
         
@@ -38,7 +39,7 @@
 
 
        
-        <% end %>
+        
 
 <% end %>
    

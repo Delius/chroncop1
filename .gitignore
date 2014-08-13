@@ -12,4 +12,4 @@ config/deploy.rb
 config/development.sphinx.conf
 log/searchd.development.pid
 db/sphinx/development/*
-#config/social_keys.yml
+config/social_keys.yml
