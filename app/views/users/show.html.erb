@@ -5,13 +5,14 @@
 		<strong>Name:</strong>
 		<ul>
 
-			<!--<%= (image_tag @user.image_url(:thumb).to_s) %> -->
+			
 			<h2> <%= @user.name %></h2></ul>
-						<% if @user.tips.any? %>
+						
 			<h5>Tips to date (<%= @user.tips.count %>)</h5>
 			<% if user_signed_in? %>
 			<% if current_user == @user %>
 			<%= link_to 'Edit', edit_user_path(@user) %>
+			<% if @user.tips.any? %>
 			<% end %>
 			<% end %>
 		</div>
