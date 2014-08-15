@@ -23,7 +23,19 @@
       <% @tips.each do |tip| %>
 
       <tr>
-        <td ><%= tip.title %></td>
+        <td ><strong><h4><%= tip.title %></h4></strong> <br>
+
+By: <%= link_to tip.user.name %> <br>
+ <div><span class="label"><%= pluralize tip.reputation_for(:votes).to_i, "vote" %> </span>
+
+  <span class="success label"><%= link_to "up", vote_tip_path(tip, type: "up"), method: "post" %></span>
+
+
+
+
+  <span class="warning label"><%= link_to "down", vote_tip_path(tip, type: "down"), method: "post" %></span></div>
+
+        </td>
         
         <td><%= tip.condition_name.name %></td>
         <td><%= tip.symptom_name.name %></td>
