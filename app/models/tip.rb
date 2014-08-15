@@ -6,7 +6,7 @@ class Tip < ActiveRecord::Base
 	belongs_to :tip_type
 	
 	acts_as_taggable_on :tags
-	validates_presence_of :title, :condition_name_id, :symptom_name_id, :tip_type_id
+	validates_presence_of :title, :condition_name_id, :symptom_name_id
 	belongs_to :user
 	validates :user_id, presence: true
 	
