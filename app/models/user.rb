@@ -10,14 +10,14 @@ class User < ActiveRecord::Base
   
   has_many :tips, dependent: :destroy
 
-  has_many :evaluations, class_name: "RSEvaluation", as: :source
+  has_many :evaluations , class_name: "RSEvaluation", as: :source
 
   has_reputation :votes, source: {reputation: :votes, of: :tips}, aggregated_by: :sum
 
   # reputation system 
-# def voted_for?(tip)
-#   evaluations.where(target_type: tip.class, target_id: tip.id).present?
-# end
+def voted_for?(tip)
+  evaluations.where(target_type: tip.class, target_id: tip.id).present?
+end
 
   # ------------------------------
   def self.create_with_omniauth(auth)

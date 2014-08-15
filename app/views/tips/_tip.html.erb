@@ -5,11 +5,6 @@
 
     <tr>
       <th>TIP TITLE  </th>
-<%= link_to tip.user.name %>  (<%= @user.reputation_for(:votes).to_i %>)
-| <%= pluralize tip.reputation_for(:votes).to_i, "vote" %>
-
-  | <%= link_to "up", vote_tip_path(tip, type: "up"), method: "post" %>
-  | <%= link_to "down", vote_tip_path(tip, type: "down"), method: "post" %>
 
 
 
@@ -23,7 +18,20 @@
      
 
       <tr>
-        <td ><%= tip.title %></td>
+        <td ><%= tip.title %>
+
+<div><span class="label"><%= pluralize tip.reputation_for(:votes).to_i, "vote" %> </span>
+<% if user_signed_in? %>
+  <span class="success label"><%= link_to "up", vote_tip_path(tip, type: "up"), method: "post" %></span>
+
+
+
+
+  <span class="warning label"><%= link_to "down", vote_tip_path(tip, type: "down"), method: "post" %></span>
+  <% end %></div>
+
+
+        </td>
         
         <td><%= tip.condition_name.name %></td>
         <td><%= tip.symptom_name.name %></td>

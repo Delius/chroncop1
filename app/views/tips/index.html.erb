@@ -25,7 +25,7 @@
       <tr>
         <td ><strong><h4><%= tip.title %></h4></strong> <br>
 
-By: <%= link_to tip.user.name %> <br>
+By: <%= tip.user.name   %> <br>
  <div><span class="label"><%= pluralize tip.reputation_for(:votes).to_i, "vote" %> </span>
 <% if user_signed_in? %>
   <span class="success label"><%= link_to "up", vote_tip_path(tip, type: "up"), method: "post" %></span>
