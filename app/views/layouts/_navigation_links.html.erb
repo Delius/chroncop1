@@ -1,6 +1,8 @@
 <% if user_signed_in? %>
 
           <li><%= link_to current_user.name, current_user %></li>
+          <a href="#" class="button"> Your reputation (<%= current_user.reputation_for(:votes).to_i %>)</a>
+          
           <li><%= link_to "Logout", destroy_user_session_path %></li>
           <% else %>
           <li><%= link_to "Sign in", new_user_session_path %></li>

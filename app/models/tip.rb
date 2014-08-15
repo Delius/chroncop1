@@ -10,6 +10,12 @@ class Tip < ActiveRecord::Base
 	belongs_to :user
 	validates :user_id, presence: true
 	
+	has_reputation :votes, source: :user, aggregated_by: :sum
+	
+
+# authority system 
+
+
 
 
 

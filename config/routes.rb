@@ -22,9 +22,15 @@ SociaLoginRails::Application.routes.draw do
   resources :users
   get :my_tips, to: 'tips#my_tips', as: 'my_tips'
   
+# reputation system
 
 
+resources :tips do
+  member { post :vote }
+end
 
+
+# --------------------------
   # resources :sessions, only: [:new, :create, :destroy]
   
   # match '/signup',  to: 'users#new',            via: 'get'

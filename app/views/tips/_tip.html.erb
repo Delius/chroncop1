@@ -5,7 +5,11 @@
 
     <tr>
       <th>TIP TITLE  </th>
-      
+| <%= tip.user.name %>
+| <%= pluralize tip.reputation_for(:votes).to_i, "vote" %>
+  | <%= link_to "up", vote_tip_path(tip, value: 1), method: "post" %>
+  | <%= link_to "down", vote_tip_path(tip, value: -1), method: "post" %>
+
       <th>Condition name </th>
       <th>Tag</th>
       <th >---------------</th>

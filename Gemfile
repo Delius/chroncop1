@@ -5,7 +5,7 @@ gem 'rails', '4.0.2'
 gem 'mysql2'
 # Use sqlite3 as the database for Active Record
 
-
+gem 'activerecord-reputation-system', github: 'NARKOZ/activerecord-reputation-system', branch: 'rails4'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -19,7 +19,7 @@ gem 'taps'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
-# gem 'activerecord-reputation-system', require: 'reputation_system'
+#gem 'activerecord-reputation-system', require: 'reputation_system'
 gem "binding_of_caller"
 gem 'acts-as-taggable-on'
 group :production do

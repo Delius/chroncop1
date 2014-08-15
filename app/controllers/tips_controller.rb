@@ -10,7 +10,8 @@ class TipsController < ApplicationController
   def index
 
     if params[:sort_by].blank?
-      @tips = Tip.tagged_with(params[:tag])
+    @tips = Tip.tagged_with(params[:tag]).find_with_reputation(:votes, :all, order: "votes desc")
+    
     
     
       else
@@ -19,7 +20,17 @@ class TipsController < ApplicationController
     
   end
 
-  
+  # reputation system 
+def vote
+  value = params[:type] == "up" ? 1 : -1
+  @tip = Tip.find(params[:id])
+  @tip.add_or_update_evaluation(:votes, value, current_user)
+  redirect_to :back, notice: "Thank you for voting"
+end
+
+
+
+  # ------------------------------------------------
 
 def tag_cloud
     @tags = Tip.tag_counts_on(:tags)

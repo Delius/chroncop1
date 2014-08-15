@@ -10,18 +10,27 @@ class User < ActiveRecord::Base
   
   has_many :tips, dependent: :destroy
 
- 
-def self.create_with_omniauth(auth)
-create! do |user|
-user.provider = auth["provider"]
-user.uid = auth["uid"]
-user.name = auth["info"]["name"] || ""
-user.address = auth["info"]["location"] || ""
-user.avatar = auth["info"]["image"] || ""
-user.oauth_token = auth["credentials"]["token"] || ""
-user.oauth_secret = auth["credentials"]["secret"] || ""
+  has_many :evaluations, class_name: "RSEvaluation", as: :source
+
+  has_reputation :votes, source: {reputation: :votes, of: :tips}, aggregated_by: :sum
+
+  # reputation system 
+def voted_for?(tip)
+  evaluations.where(target_type: tip.class, target_id: tip.id).present?
 end
-end
+
+  # ------------------------------
+  def self.create_with_omniauth(auth)
+    create! do |user|
+      user.provider = auth["provider"]
+      user.uid = auth["uid"]
+      user.name = auth["info"]["name"] || ""
+      user.address = auth["info"]["location"] || ""
+      user.avatar = auth["info"]["image"] || ""
+      user.oauth_token = auth["credentials"]["token"] || ""
+      user.oauth_secret = auth["credentials"]["secret"] || ""
+    end
+  end
 
 
 
