@@ -15,22 +15,24 @@ class User < ActiveRecord::Base
   has_reputation :votes, source: {reputation: :votes, of: :tips}, aggregated_by: :sum
 
   # reputation system 
-def voted_for?(tip)
-  evaluations.where(target_type: tip.class, target_id: tip.id).present?
-end
+  def voted_for?(tip)
+    evaluations.where(target_type: tip.class, target_id: tip.id).present?
+  end
 
 
-has_many :followed_user_relationships,
- foreign_key: :follower_id,
- class_name: 'FollowingRelationship'
-has_many :followed_users, through: :followed_user_relationships
+  has_many :followed_user_relationships,
+  foreign_key: :follower_id,
+  class_name: 'FollowingRelationship'
+  has_many :followed_users, through: :followed_user_relationships
 
-has_many :follower_relationships, 
+  has_many :follower_relationships, 
   foreign_key: :followed_user_id, 
   class_name: 'FollowingRelationship'
-has_many :follower_relationships, through: :follower_relationships
+  has_many :follower_relationships, through: :follower_relationships
 
-
+  def following? user
+    followed_user_ids.include? user.id
+  end
 
   # ------------------------------
   def self.create_with_omniauth(auth)
