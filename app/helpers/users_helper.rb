@@ -5,4 +5,8 @@ module UsersHelper
 		digest = Digest::MD5.hexdigest(@user.email)
 		image_tag("http://gravatar.com/avatar/#{digest}?s=#{size}")
 end
+
+def follow_button user
+	button_to 'Follow', user_follow_path(user)
+end
 	end

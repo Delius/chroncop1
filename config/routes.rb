@@ -19,7 +19,9 @@ SociaLoginRails::Application.routes.draw do
   match '/conditions', to: 'pages#conditions', via: 'get'
   match '/symptoms', to: 'pages#symptoms', via: 'get'
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
-  resources :users
+  resources :users do
+    post 'follow' => 'following_relationships#create'
+  end
   get :my_tips, to: 'tips#my_tips', as: 'my_tips'
   
 # reputation system
