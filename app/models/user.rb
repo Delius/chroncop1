@@ -23,6 +23,11 @@ end
 has_many :following_relationships, foreign_key: :follower_id
 has_many :followed_users, through: :following_relationships
 
+has_many :follower_relationships, 
+  foreign_key: :followed_user_id, 
+  class_name: 'FollowingRelationship'
+has_many :follower_relationships, through: :follower_relationships
+
 
 
   # ------------------------------
