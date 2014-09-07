@@ -21,6 +21,7 @@ SociaLoginRails::Application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   resources :users do
     post 'follow' => 'following_relationships#create'
+    delete 'follow' => 'following_relationships#destroy'
   end
   get :my_tips, to: 'tips#my_tips', as: 'my_tips'
   
