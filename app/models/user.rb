@@ -19,6 +19,12 @@ def voted_for?(tip)
   evaluations.where(target_type: tip.class, target_id: tip.id).present?
 end
 
+
+has_many :following_relationships, foreign_key: :follower_id
+has_many :followed_users, through: :following_relationships
+
+
+
   # ------------------------------
   def self.create_with_omniauth(auth)
     create! do |user|
