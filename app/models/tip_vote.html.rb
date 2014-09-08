@@ -1,5 +1,5 @@
 # validates_uniqueness_of :tip_id, scope: :user_id
-validates_inclusion_of :value, in: [1, -1]
+# validates_inclusion_of :value, in: [1, -1]
 validate :ensure_not_author
 
 def ensure_not_author
