@@ -42,6 +42,11 @@ class User < ActiveRecord::Base
     followed_users.delete(user)
   end
 
+  # extract method pattern
+  def user
+    User.find(params[:user-id])
+  end
+
   # -------------??????????? do i need   that?-----------------
   def self.create_with_omniauth(auth)
     create! do |user|
