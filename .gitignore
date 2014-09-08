@@ -1,10 +1,10 @@
 lighthouse-addons/*
 doc/*
-db/schema.rb
+#db/schema.rb
 tmp/*
 public/system/*
 .bundle
-config/database.yml
+#config/database.yml
 db/*.sqlite3
 log/*.log
 tmp/**/*
@@ -12,4 +12,4 @@ config/deploy.rb
 config/development.sphinx.conf
 log/searchd.development.pid
 db/sphinx/development/*
-config/social_keys.yml
+#config/social_keys.yml
