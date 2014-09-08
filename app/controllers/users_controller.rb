@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @tips = @user.tips
+    @shouts = @user.shouts
   end
 
  
