@@ -80,9 +80,11 @@ def create
 web_url = Rails.application.routes.url_helpers.tips_url(:host => 'chronicillnesses.co.uk' )
 @tip = current_user.tips.new(tip_params)
 
-# posts a tweet to twitter
+# posts a tweet to twitter uncomment on production server
 
-client.update( "I just shared  "  "#{@tip.title} tip @ #{web_url}")
+# client.update( "I just shared  "  "#{@tip.title} tip @ #{web_url}")
+
+
 # ------------------------------------------------------------------------------------------
 respond_to do |format|
   if @tip.save
