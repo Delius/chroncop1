@@ -1,0 +1,4 @@
+class DashboardsController < AplicationController
+
+
+end

@@ -24,7 +24,7 @@ SociaLoginRails::Application.routes.draw do
     delete 'follow' => 'following_relationships#destroy'
   end
   get :my_tips, to: 'tips#my_tips', as: 'my_tips'
-  
+  resource :dashboard, only: [:show]
 # reputation system
 
 
