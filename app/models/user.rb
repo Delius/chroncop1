@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   end
 
   # folowing folow followers section
+  has_many :shouts
   has_many :followed_user_relationships,
   foreign_key: :follower_id,
   class_name: 'FollowingRelationship'
