@@ -8,6 +8,6 @@ class CreateShouts < ActiveRecord::Migration
       t.timestamps
       
     end
-    add_index :shouts, user_id
+    add_index :shouts, :user_id
   end
 end

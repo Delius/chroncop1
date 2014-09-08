@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140908091119) do
+ActiveRecord::Schema.define(version: 20140908210348) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "resource_id",   null: false
@@ -73,17 +73,6 @@ ActiveRecord::Schema.define(version: 20140908091119) do
   add_index "following_relationships", ["followed_user_id"], name: "index_following_relationships_on_followed_user_id", using: :btree
   add_index "following_relationships", ["follower_id"], name: "index_following_relationships_on_follower_id", using: :btree
 
-  create_table "friends", force: true do |t|
-    t.string   "name"
-    t.string   "screen_name"
-    t.string   "location"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "rs_evaluations", force: true do |t|
     t.string   "reputation_name"
     t.integer  "source_id"
@@ -129,12 +118,14 @@ ActiveRecord::Schema.define(version: 20140908091119) do
   add_index "rs_reputations", ["target_id", "target_type"], name: "index_rs_reputations_on_target_id_and_target_type", using: :btree
 
   create_table "shouts", force: true do |t|
-    t.string   "body"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "content_type"
+    t.integer  "content_id"
   end
 
+  add_index "shouts", ["content_type", "content_id"], name: "index_shouts_on_content_type_and_content_id", using: :btree
   add_index "shouts", ["user_id"], name: "index_shouts_on_user_id", using: :btree
 
   create_table "symptom_names", force: true do |t|
@@ -162,6 +153,12 @@ ActiveRecord::Schema.define(version: 20140908091119) do
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
+
+  create_table "text_shouts", force: true do |t|
+    t.string   "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tip_types", force: true do |t|
     t.string   "name"
