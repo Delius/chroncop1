@@ -11,7 +11,9 @@
 				
 			<h5>Tips to date (<%= @user.tips.count %>)</h5>
 			<% if user_signed_in? %>
+			<% if current_user can_follow?(@user) %>
 			<%= follow_button @user %>
+			<% end %>
 			<% if current_user == @user %>
 			<%= link_to 'Edit', edit_user_path(@user) %>
 			<% if @user.tips.any? %>
