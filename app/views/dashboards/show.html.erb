@@ -1,12 +1,12 @@
-<%= form_for @text_shout do |form| %>
+<%= form_for @tdashboard.new.text_shout do |form| %>
 
 <%= form.text_field :body, placeholder: 'Shout content here' %>
 <%= form.submit 'Shout' %>
 <% end %>
 
-<%= form_for @photo_shout do |form| %>
+<%= form_for @dashboard.new.photo_shout do |form| %>
 
 <%= form.file_field :image %>
 <%= form.submit 'Shout' %>
 <% end %>
-<%= render @shouts %>
+<%= render @dashboard.shouts %>
