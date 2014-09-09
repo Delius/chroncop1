@@ -51,7 +51,7 @@ private
     end
 
      def validate_authorization_for_user
-     redirect_to root_path unless @user == current_user
+     redirect_to @user unless @user == current_user
      end
 
 
