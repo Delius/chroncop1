@@ -8,7 +8,7 @@ gem 'mysql2'
 gem 'activerecord-reputation-system', github: 'NARKOZ/activerecord-reputation-system', branch: 'rails4'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
-
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # gem 'protected_attributes'
