@@ -26,7 +26,8 @@ SociaLoginRails::Application.routes.draw do
   get :my_tips, to: 'tips#my_tips', as: 'my_tips'
   resource :dashboard, only: [:show]
 
-  resources :shouts, only: [:create, :show]
+  resources :shouts, only: [:show]
+  resources :text_shouts, only: [:create]
 
 
 # reputation system
