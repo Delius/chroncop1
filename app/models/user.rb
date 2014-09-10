@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  # include Concerns::following // ---> couldnt move code to conncerns see l 26
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
@@ -22,6 +23,8 @@ class User < ActiveRecord::Base
   # folowing folow followers section
   has_many :shouts
   
+  # --- couldn't move to concerns hangs the rails server ?----------------
+
   has_many :followed_user_relationships,
   foreign_key: :follower_id,
   class_name: 'FollowingRelationship'
