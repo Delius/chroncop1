@@ -58,6 +58,8 @@ gem 'rmagick'
 gem 'simple_form'
 
 gem 'thin'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
 
 group :development, :test do
   gem 'byebug'
