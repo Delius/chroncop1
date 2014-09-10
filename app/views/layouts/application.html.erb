@@ -25,7 +25,10 @@
 </head>
 
 <body>
-
+  <%= form_for(:searc, url: search_path, method: :get) do |form| %>
+<%= f.text_field :term %>
+<%= f.submit "Search" %>
+<% end %>
   <div id="fb-root"></div>
 
 <!-- navigation bar -->
