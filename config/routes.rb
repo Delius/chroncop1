@@ -25,7 +25,7 @@ SociaLoginRails::Application.routes.draw do
   end
   get :my_tips, to: 'tips#my_tips', as: 'my_tips'
   resource :dashboard, only: [:show]
-
+  resource :search, only: [:show]
   resources :shouts, only: [:show]
   resources :text_shouts, only: [:create]
   resources :photo_shouts, only: [:create]
