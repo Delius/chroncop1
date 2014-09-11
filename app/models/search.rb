@@ -1,32 +1,29 @@
-class Search 
-
-
+class Search
+	# extend ActiveModel::Naming
 	attr_reader :term
 	def initialize options = {}
 		@term = options.fetch(:term, "")
 	end
 
 	def shouts
-		Shout.search do 
-			fulltext @term
-		end
-
+		Shout.text_shouts.where(content_id: text_shouts)
 	end
+
+
 
 	def to_partial_path
 		"searches/search"
-
 	end
 	# def to_partial_path
 	# 	"shouts/shout"
 	# end
 
-	# private
+	private
 	
-	# def text_shouts
-	# 	TextShout.where("body LIKE ?", search_term)
-	# 		end
-	# def search_term
-	# 	"%#{term}%"
-	# end
+	def text_shouts
+		TextShout.where("body LIKE ?", search_term)
+	end
+	def search_term
+		"%#{term}%"
+	end
 end
