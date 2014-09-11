@@ -1,5 +1,6 @@
 class Search
-	# extend ActiveModel::Naming
+	include ActiveModel::Model # for rails 4
+	# extend ActiveModel::Naming //for rails 3. - -
 	attr_reader :term
 	def initialize options = {}
 		@term = options.fetch(:term, "")
@@ -11,9 +12,9 @@ class Search
 
 
 
-	def to_partial_path
-		"searches/search"
-	end
+	# def to_partial_path
+	# 	"searches/search"
+	# end
 	# def to_partial_path
 	# 	"shouts/shout"
 	# end
