@@ -1,4 +1,9 @@
 <% if user_signed_in? %>
+<li>
+  <%= form_for(:search, url: search_path, method: :get) do |form| %>
+<%= form.text_field :term %></li>
+<li><%= form.submit "Search" %>
+<% end %></li>
 
           <li><%= link_to current_user.name, current_user %></li>
           <li><%= link_to "Dasboard", dashboard_path %></li>
