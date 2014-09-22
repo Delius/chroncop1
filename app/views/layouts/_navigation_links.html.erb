@@ -5,7 +5,7 @@
 <li><%= form.submit "Search" %>
 <% end %></li>
 
-          <li><%= link_to current_user.name, current_user %></li>
+          <li><%= link_to current_user.email, current_user %></li>
           <li><%= link_to "Dasboard", dashboard_path %></li>
           
           <li><%= link_to "Logout", destroy_user_session_path %></li>
