@@ -4,7 +4,7 @@ SociaLoginRails::Application.routes.draw do
 
   get "home/index"
   resources :tips
-  root :to => "homes#show", via: :get
+  root :to => "tips#index", via: :get
 
   
   ActiveAdmin.routes(self)
