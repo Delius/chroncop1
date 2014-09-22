@@ -1,5 +1,7 @@
 <%= div_for shout do %>
+<% if current_user.email != nil %>
 <%= gravatar shout.user %>
+<%end%>
 <%= link_to shout.user.name , shout.user%>
 shouted
 <div>
