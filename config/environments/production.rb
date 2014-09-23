@@ -48,18 +48,14 @@ SociaLoginRails::Application.configure do
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 
-  config.app_domain = 'http://thawing-lake-7709.herokuapp.com'
-  Rails.application.routes.default_url_options[:host] = 'thawing-lake-7709.herokuapp.com'
-  # Email
-  #config.action_mailer.delivery_method = :smtp
-  #config.action_mailer.perform_deliveries = true
-  #config.action_mailer.default_url_options = { host: config.app_domain }
-  config.action_mailer.default_url_options = { :host => 'thawing-lake-7709.herokuapp.com' }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default :charset => "utf-8"
-  config.action_mailer.smtp_settings = {
+   config.action_mailer.default_url_options = { :host => 'thawing-lake-7709.herokuapp.com' }
+
+
+  #These settings are for the sending out email for active admin and consequently the   devise mailer
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.perform_deliveries = true
+  ActionMailer::Base.raise_delivery_errors = true
+  ActionMailer::Base.smtp_settings =  {
     address: 'auth.smtp.1and1.co.uk', 
     port: '25',
     authentication: 'plain',
