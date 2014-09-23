@@ -52,10 +52,12 @@ SociaLoginRails::Application.configure do
 
 
   #These settings are for the sending out email for active admin and consequently the   devise mailer
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.perform_deliveries = true
-  ActionMailer::Base.raise_delivery_errors = true
-  ActionMailer::Base.smtp_settings =  {
+  
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
     address: 'auth.smtp.1and1.co.uk', 
     port: '25',
     authentication: 'plain',
@@ -64,7 +66,7 @@ SociaLoginRails::Application.configure do
     domain:ENV["GMAIL_DOMAIN"],
 
 
-  } 
+  }  
   # Use a different logger for distributed setups.
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
