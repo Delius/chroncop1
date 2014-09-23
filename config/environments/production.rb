@@ -52,12 +52,17 @@ SociaLoginRails::Application.configure do
   config.action_mailer.default_url_options = { :host => 'chronicillnesses.co.uk' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
-    config.action_mailer.smtp_settings = {
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
     address: 'auth.smtp.1and1.co.uk', 
     port: '25',
-    domain: 'chronicillnesses.co.uk',
+    authentication: 'plain',
     user_name: 'support@chronicdiseases.org.uk',
     password: '22Chaberek22',
+    domain: 'chronicillnesses.co.uk',
+
+    
 
 
   } 
