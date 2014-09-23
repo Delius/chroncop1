@@ -48,11 +48,13 @@ SociaLoginRails::Application.configure do
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 
-   config.action_mailer.default_url_options = { :host => 'chronicdiseases.org.uk' }
-
-
-  #These settings are for the sending out email for active admin and consequently the   devise mailer
-  
+  config.app_domain = 'http://chronicillnesses.co.uk/'
+  Rails.application.routes.default_url_options[:host] = 'chronicillnesses.co.uk/'
+  # Email
+  #config.action_mailer.delivery_method = :smtp
+  #config.action_mailer.perform_deliveries = true
+  #config.action_mailer.default_url_options = { host: config.app_domain }
+  config.action_mailer.default_url_options = { :host => 'chronicillnesses.co.uk/' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
@@ -61,12 +63,12 @@ SociaLoginRails::Application.configure do
     address: 'auth.smtp.1and1.co.uk', 
     port: '25',
     authentication: 'plain',
-    user_name:ENV["GMAIL_USERNAME"],
-    password:ENV["GMAIL_PASSWORD"],
-    domain:ENV["GMAIL_DOMAIN"],
+    user_name:support@chronicdiseases.org.uk,
+    password:22Chaberek22",
+    domain:chronicillnesses.co.uk,
 
 
-  }  
+  } 
   # Use a different logger for distributed setups.
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
