@@ -48,24 +48,19 @@ SociaLoginRails::Application.configure do
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 
-  config.app_domain = 'http://chronicillnesses.co.uk/'
-  Rails.application.routes.default_url_options[:host] = 'chronicillnesses.co.uk/'
-  # Email
-  #config.action_mailer.delivery_method = :smtp
-  #config.action_mailer.perform_deliveries = true
-  #config.action_mailer.default_url_options = { host: config.app_domain }
-  config.action_mailer.default_url_options = { :host => 'chronicillnesses.co.uk/' }
+ 
+  config.action_mailer.default_url_options = { :host => 'chronicillnesses.co.uk' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default :charset => "utf-8"
+  
   config.action_mailer.smtp_settings = {
     address: 'auth.smtp.1and1.co.uk', 
     port: '25',
-    authentication: 'plain',
+    domain: 'chronicillnesses.co.uk',
     user_name: 'support@chronicdiseases.org.uk',
     password: '22Chaberek22',
-    domain: 'chronicillnesses.co.uk',
+    :enable_starttls_auto => true
+    
 
 
   } 
