@@ -63,9 +63,9 @@ SociaLoginRails::Application.configure do
     address: 'auth.smtp.1and1.co.uk', 
     port: '25',
     authentication: 'plain',
-    user_name:support@chronicdiseases.org.uk,
-    password:22Chaberek22,
-    domain:chronicillnesses.co.uk
+    user_name: support@chronicdiseases.org.uk,
+    password: 22Chaberek22,
+    domain: chronicillnesses.co.uk,
 
 
   } 
