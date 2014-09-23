@@ -59,7 +59,7 @@ SociaLoginRails::Application.configure do
     domain: 'chronicillnesses.co.uk',
     user_name: 'support@chronicdiseases.org.uk',
     password: '22Chaberek22',
-    :enable_starttls_auto => true
+  
     
 
 
