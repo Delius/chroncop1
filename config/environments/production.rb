@@ -48,8 +48,7 @@ SociaLoginRails::Application.configure do
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 
- 
-  config.action_mailer.default_url_options = { :host => 'chronicillnesses.co.uk' }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
@@ -58,14 +57,12 @@ SociaLoginRails::Application.configure do
     address: 'auth.smtp.1and1.co.uk', 
     port: '25',
     authentication: 'plain',
-    user_name: 'support@chronicillnesses.co.uk',
-    password: '22Chaberek22',
-    domain: 'chronicillnesses.co.uk',
-
-    
+    user_name:ENV["GMAIL_USERNAME"],
+    password:ENV["GMAIL_PASSWORD"],
+    domain:ENV["GMAIL_DOMAIN"],
 
 
-  } 
+  }  
   # Use a different logger for distributed setups.
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
