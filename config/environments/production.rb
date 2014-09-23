@@ -65,7 +65,7 @@ SociaLoginRails::Application.configure do
     authentication: 'plain',
     user_name:support@chronicdiseases.org.uk,
     password:22Chaberek22,
-    domain:chronicillnesses.co.uk,
+    domain:chronicillnesses.co.uk
 
 
   } 
