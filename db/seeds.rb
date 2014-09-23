@@ -6,10 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-condition_names = ["Fibromyalgia", "Arthritis"]
+condition_names = ["Fibromyalgia", "Arthritis","Lupus","Chronic Fatigue Syndrome","Ankylosing Spondylitis","Migraines","
+
+Irritable bowel syndrome","Depression","Obesity"]
 condition_names.each{ |d| ConditionName.where(:name => d).first_or_create }
 
-symptom_names = ["Widespread pain", "Extreme sensitivity", "Stiffness","Fatigue","Poor sleep quality","fibro-fog", "Headaches","IBS","dizziness","restless legs","anxiety","depression"]
+symptom_names = ["Widespread pain", "Extreme sensitivity", "Stiffness","Fatigue","Poor sleep quality","Fibro-fog", "Headaches","Dizziness","Restless legs","Anxiety"]
 symptom_names.each{ |d| SymptomName.where(:name => d).first_or_create }
 
 tip_types = ["Exercise", "Resistance exercises","Pacing","Relaxation","Sleeping Habits"]
