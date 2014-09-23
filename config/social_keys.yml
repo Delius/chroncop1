@@ -41,4 +41,4 @@ production:
 
   GMAIL_DOMAIN: "thawing-lake-7709.herokuapp.com"
   GMAIL_USERNAME: "support@chronicdiseases.org.uk"
-  GMAIL_PASSWORD: "22CHaberek22"
+  GMAIL_PASSWORD: ""
