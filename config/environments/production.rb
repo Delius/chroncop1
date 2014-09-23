@@ -55,7 +55,7 @@ SociaLoginRails::Application.configure do
     config.action_mailer.smtp_settings = {
     address: 'auth.smtp.1and1.co.uk', 
     port: '25',
-    authentication: 'plain',
+    domain: 'chronicillnesses.co.uk',
     user_name: 'support@chronicdiseases.org.uk',
     password: '22Chaberek22',
 
