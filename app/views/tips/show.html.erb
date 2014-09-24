@@ -30,7 +30,15 @@
   <p>
     <strong>My tip:</strong>
     <%= @tip.my_tip %>
+<div><span class="label"><%= pluralize @tip.reputation_for(:votes).to_i, "vote" %> </span>
+<% if user_signed_in? %>
+  <span class="success label"><%= link_to "up", vote_tip_path(@tip, type: "up"), method: "post" %></span>
 
+
+
+
+  <span class="warning label"><%= link_to "down", vote_tip_path(@tip, type: "down"), method: "post" %></span>
+  <% end %></div>
   </p>
 </div>
 
