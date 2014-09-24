@@ -11,42 +11,45 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field" >
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
- <div class="form-group">
+<!--  <div class="form-group">
 <%= f.label :Is_it_difficult_? %><br>
 <%=f.select :difficulty_level, Tip::DIFFICULTY,{} ,
 :class => "form-control"%>
-</div>
-  <div class="form-group">
+</div> -->
+  <div class="large-6 columns">
     <%= f.label :condition_name_id %><br>
     <%= f.select(:condition_name_id,
    options_from_collection_for_select(ConditionName.all, :id, :name),
   {:prompt =>'Please Choose'}, :class => "form-control") %>
   </div>
-   <div class="form-group">
+   <div class="large-6 columns">
     <%= f.label :symptom_name_id %><br>
     <%= f.select( :symptom_name_id,
   options_from_collection_for_select(SymptomName.all, :id, :name),
   {:prompt => 'Please Choose'}, :class => "form-control") %>
   </div>
  
-  <div class="field">
+ <!--  <div class="field">
     <%= f.label :what_is_needed_? %><br>
     <%= f.text_area :what_needed %>
-  </div>
+  </div> -->
   <div class="field">
     <%= f.label :my_tip %>  [ tip description ] <br>
     <%= f.text_area :my_tip %>
   </div>
-  <div class="field">
+  <div class="row">
+  
+    <div class="large-14 columns">
 <%= f.label :tags_comma_separated %>
 <%= f.text_field :tag_list %>
 
 </div>
+</div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit  :class => "button tiny"%>
   </div>
 <% end %>
