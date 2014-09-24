@@ -1,11 +1,11 @@
 development:
-  facebook_key: ""
-  facebook_secret: ""
+  facebook_key: "452410698112385"
+  facebook_secret: "f6c41e771aec0968b36c7fdfb49fbd12"
 
-  twitter_key: ""
-  twitter_secret: ""
-  twitter_token: ""
-  twitter_token_secret: ""
+  twitter_key: "Bdyx2U1waoNMEXn78nGdd14t2"
+  twitter_secret: "0YPMNPd7V4p36Zzj5xzBfweVqPS4IhOdlE99Txun1eW2giGO6C"
+  twitter_token: "168429845-anokGzKl2dUM4iTpN44KfTpVmtvZGQlJMUt6hqZT"
+  twitter_token_secret: "gQEWaSpTfRtvWdXwhqCXzsiKZYTihIh23j0skbo5tzT73"
 
   github_key: "YOUR_KEY"
   github_secret: "YOUR_SECRET"
@@ -18,17 +18,17 @@ development:
 
   GMAIL_DOMAIN: "thawing-lake-7709.herokuapp.com"
   GMAIL_USERNAME: "support@chronicdiseases.org.uk"
-  GMAIL_PASSWORD: ""
+  GMAIL_PASSWORD: "22CHaberek22"
 
 
 production:
-  facebook_key: ""
-  facebook_secret: ""
+  facebook_key: "452410698112385"
+  facebook_secret: "f6c41e771aec0968b36c7fdfb49fbd12"
 
-  twitter_key: ""
-  twitter_secret: ""
-  twitter_token: ""
-  twitter_token_secret: ""
+  twitter_key: "Bdyx2U1waoNMEXn78nGdd14t2"
+  twitter_secret: "0YPMNPd7V4p36Zzj5xzBfweVqPS4IhOdlE99Txun1eW2giGO6C"
+  twitter_token: "168429845-anokGzKl2dUM4iTpN44KfTpVmtvZGQlJMUt6hqZT"
+  twitter_token_secret: "gQEWaSpTfRtvWdXwhqCXzsiKZYTihIh23j0skbo5tzT73"
 
   github_key: "YOUR_KEY"
   github_secret: "YOUR_SECRET"
@@ -41,4 +41,4 @@ production:
 
   GMAIL_DOMAIN: "thawing-lake-7709.herokuapp.com"
   GMAIL_USERNAME: "support@chronicdiseases.org.uk"
-  GMAIL_PASSWORD: ""
+  GMAIL_PASSWORD: "22CHaberek22"
