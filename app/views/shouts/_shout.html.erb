@@ -6,10 +6,10 @@
 <%end%>
 <%= link_to shout.user.username , shout.user%>
 shouted 
-<div class="panel callout radius">
-<%= render shout.content %>
+
+<%= render shout.content :class => "panel callout radius"%>
 
 <%= link_to time_ago_in_words(shout.created_at ), shout %> ago.
 <% end %>
-</div>
+
 </div>
