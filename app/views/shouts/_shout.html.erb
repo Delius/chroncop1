@@ -1,13 +1,15 @@
 <div class="panel callout radius">
 <%= div_for shout do %>
 <% if current_user.email != nil %>
-<%= gravatar shout.user %>
+<a class="th">
+<%= gravatar shout.user %></a>
 <%end%>
 <%= link_to shout.user.username , shout.user%>
-shouted
-<div>
+shouted 
+<div class="panel callout radius">
 <%= render shout.content %>
-</div>
+
 <%= link_to time_ago_in_words(shout.created_at ), shout %> ago.
 <% end %>
+</div>
 </div>
