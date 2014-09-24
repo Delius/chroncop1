@@ -6,7 +6,7 @@
 		<ul>
 
 			
-			<h2> <%= @user.name %></h2></ul>
+			<h2> <%= @user.username %></h2></ul>
 				<% if @user.email != nil %>
 				<%= gravatar @user %>	
 				<a href='http://gravatar.com/emails'>Change</a>	
@@ -17,7 +17,7 @@
 			<%= follow_button @user %>
 			<% end %>
 			<% if current_user == @user %>
-			<%= link_to 'Edit', edit_user_path(@user) %>
+			<%= link_to 'Edit', edit_user_registration_path %>
 			<% if @user.tips.any? %>
 			<% end %>
 			<% end %>

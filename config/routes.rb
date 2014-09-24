@@ -19,6 +19,7 @@ SociaLoginRails::Application.routes.draw do
   match '/conditions', to: 'pages#conditions', via: 'get'
   match '/symptoms', to: 'pages#symptoms', via: 'get'
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
+
   resources :users do
     post 'follow' => 'following_relationships#create'
     delete 'follow' => 'following_relationships#destroy'

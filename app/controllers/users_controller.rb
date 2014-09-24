@@ -41,7 +41,7 @@ def destroy
 
 
 def user_params
-  params.require(:user ).permit(:id,:name,:about, :avatar,:email, :password,:password_confirmation)
+  params.require(:user ).permit(:id,:name,:about, :avatar,:email, :password,:password_confirmation,:username, :remember_me)
 end
 
 private

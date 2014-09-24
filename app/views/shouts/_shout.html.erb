@@ -2,7 +2,7 @@
 <% if current_user.email != nil %>
 <%= gravatar shout.user %>
 <%end%>
-<%= link_to shout.user.name , shout.user%>
+<%= link_to shout.user.username , shout.user%>
 shouted
 <div>
 <%= render shout.content %>
