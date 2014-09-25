@@ -2,24 +2,24 @@
 
 
 <p>
-  
+
   <div class="panel callout radius"><h2> <%= @tip.title %></h2></div>
 </p>
 
 <div class="panel callout radius">
 
-<div class="large-6 columns">
-  <p>
-    <strong>Condition name:</strong>
-    <%= @tip.condition_name.name %>
-  </p>
-</div>
+  <div class="large-6 columns">
+    <p>
+      <strong>Condition name:</strong>
+      <%= @tip.condition_name.name %>
+    </p>
+  </div>
   <p>
     <strong>Symptom name:</strong>
     <%= @tip.symptom_name.name %>
   </p>
 
- 
+
 </div>
 <!-- <div class="panel callout radius">
   <p>
@@ -31,17 +31,17 @@
   <p>
     <strong>My tip:</strong>
     <%= @tip.my_tip %>
-<div><span class="label"><%= pluralize @tip.reputation_for(:votes).to_i, "vote" %> </span>
-<% if user_signed_in? %>
-  <span class="success label"><%= link_to "up", vote_tip_path(@tip, type: "up"), method: "post" %></span>
+    <div><span class="label"><%= pluralize @tip.reputation_for(:votes).to_i, "vote" %> </span>
+      <% if user_signed_in? %>
+      <span class="success label"><%= link_to "up", vote_tip_path(@tip, type: "up"), method: "post" %></span>
 
 
 
 
-  <span class="warning label"><%= link_to "down", vote_tip_path(@tip, type: "down"), method: "post" %></span>
-  <% end %></div>
-  </p>
-</div>
+      <span class="warning label"><%= link_to "down", vote_tip_path(@tip, type: "down"), method: "post" %></span>
+      <% end %></div>
+    </p>
+  </div>
 
   
   <div class="panel callout radius">
@@ -53,14 +53,25 @@
 
   </div>
 
+  <div class="panel callout radius">
+    <div class='spread'>  
+      <div class='twshare left'>   <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="fibrotr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>  
+    </div>  
 
-      <% if current_user == @user %>
+    <div class="fb-like" data-href="https://www.facebook.com/pages/FibroTrust/482527011777039" data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="true">
+    </div>
+</div>
+</div>
+<div class="row"><% if @tip.user == current_user %>
+  <div class="medium-4 columns"><%= link_to 'Share another one', new_tip_path, class: 'button  radius success' %></div>
+  <div class="medium-3 columns">
+    
+    <%= link_to 'Edit', edit_tip_path(@tip) , class: 'button alert'%> 
   
-  
-<%= link_to 'Edit', edit_tip_path(@tip) %> |
-    <%= link_to 'Back', tips_path %>
- <% end %>
-<div class="panel callout radius">
-  <div class='spread'>  <div class='twshare left'>   <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="fibrotr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>  
-  </div>  
-  <div class="fb-like" data-href="https://www.facebook.com/pages/FibroTrust/482527011777039" data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="true"></div>
+</div>
+  <% end %>
+
+  <div class="medium-3 columns end">
+   <%= link_to 'Back', tips_path , class: 'button'%>
+</div>
+
