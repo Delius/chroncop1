@@ -56,22 +56,22 @@
   <div class="panel callout radius">
     <div class='spread'>  
       <div class='twshare left'>   <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="fibrotr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>  
-    </div>  
+      </div>  
 
-    <div class="fb-like" data-href="https://www.facebook.com/pages/FibroTrust/482527011777039" data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="true">
+      <div class="fb-like" data-href="https://www.facebook.com/pages/FibroTrust/482527011777039" data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="true">
+      </div>
     </div>
-</div>
-</div>
-<div class="row"><% if @tip.user == current_user %>
-  <div class="medium-4 columns"><%= link_to 'Share another one', new_tip_path, class: 'button  radius success' %></div>
-  <div class="medium-3 columns">
+  </div>
+  <div class="row">
+    <div class="medium-4 columns"><%= link_to 'Share another one', new_tip_path, class: 'button  radius success' %></div>
+    <div class="medium-3 columns">
+      <% if @tip.user == current_user %>
+      <%= link_to 'Edit', edit_tip_path(@tip) , class: 'button alert'%> 
+      <% end %>
+    </div>
     
-    <%= link_to 'Edit', edit_tip_path(@tip) , class: 'button alert'%> 
-  
-</div>
-  <% end %>
 
-  <div class="medium-3 columns end">
-   <%= link_to 'Back', tips_path , class: 'button'%>
-</div>
+    <div class="medium-3 columns end">
+     <%= link_to 'Back', tips_path , class: 'button'%>
+   </div>
 
