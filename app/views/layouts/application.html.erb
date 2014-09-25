@@ -52,10 +52,7 @@
       <% if user_signed_in? %>
 
 <br>
-  <%= form_for(:search, url: search_path, method: :get) do |form| %>
-<%= form.text_field :term %>
-<%= form.submit "Search Shouts", :class => "button tiny right"%>
-<% end %><% end %>
+<% end %>
       <%= render 'layouts/messages' %>
     </div>
   </div>

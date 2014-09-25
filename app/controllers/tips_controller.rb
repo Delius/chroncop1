@@ -7,8 +7,8 @@ class TipsController < ApplicationController
 
   # GET /tips
   # GET /tips.json
-  def index
-
+  def index   
+@tips = Tip.text_search(params[:query])
     if params[:sort_by].blank?
     @tips = Tip.tagged_with(params[:tag])
     @tips = Tip.find_with_reputation(:votes, :all, order: "votes desc")
