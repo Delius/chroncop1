@@ -22,7 +22,7 @@ attr_reader :term
 
 def self.text_search(query)
 	if query.present?
-		where("body LIKE ?", q: "%#{query}%")
+		where("body ILIKE ?", q: "%#{query}%")
 	else
 		scoped
 
