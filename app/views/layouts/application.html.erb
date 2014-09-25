@@ -44,7 +44,7 @@
 <br>
   <%= form_for(:search, url: search_path, method: :get) do |form| %>
 <%= form.text_field :term %>
-<%= form.submit "Search", :class => "button tiny right"%>
+<%= form.submit "Search Shouts", :class => "button tiny right"%>
 <% end %><% end %>
       <%= render 'layouts/messages' %>
     </div>
@@ -56,7 +56,7 @@
       <%= render 'layouts/categories' %>
     </div>
     <div class="large-9 columns">
-    
+
       <%= yield %>
     </div>
 
