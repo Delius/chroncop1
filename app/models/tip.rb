@@ -23,6 +23,8 @@ attr_reader :term
 def self.text_search(query)
 	if query.present?
 		where("body LIKE ?", q: "%#{query}%")
+	else
+		scoped
 
 end
 # def search_term
