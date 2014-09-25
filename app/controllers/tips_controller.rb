@@ -146,6 +146,6 @@ private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tip_params
-      params.require(:tip).permit(:title, :votes, :difficulty_level, :condition_name_id, :symptom_name_id, :tip_type_id, :what_needed, :my_tip, :user_id,:tips_url ,:tag_list, :tag )
+      params.require(:tip).permit(:title, :votes, :difficulty_level, :condition_name_id, :symptom_name_id, :tip_type_id, :what_needed, :my_tip, :user_id,:tips_url ,:tag_list, :tag,:name )
     end
   end
