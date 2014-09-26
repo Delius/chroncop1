@@ -11,6 +11,12 @@
   <p>Pawel</p>
 
 </div>
+<h2 class="text-center">Tags</h2>
 <div class="panel callout radius">
- 
+
+ <div id="tag_cloud">
+  <% tag_cloud Tip.tag_counts, %w[css1 css2 css3 css4] do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>   <span class="round alert label"></span>
+  <% end %>
+</div>
 </div>
