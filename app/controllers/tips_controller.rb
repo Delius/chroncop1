@@ -9,9 +9,9 @@ class TipsController < ApplicationController
   # GET /tips.json
   def index   
 
-    if params[:sort_by].blank?
+    if params[:tag]
     @tips = Tip.tagged_with(params[:tag])
-    @tips = Tip.find_with_reputation(:votes, :all, order: "votes desc")
+     # @tips = Tip.find_with_reputation(:votes, :all, order: "votes desc")
     
     
     
@@ -82,7 +82,7 @@ web_url = Rails.application.routes.url_helpers.tips_url(:host => 'chronicillness
 
 # posts a tweet to twitter uncomment on production server
 
-client.update( "#fibrotrust just shared  "  "#{@tip.title} tip @ #{web_url}")
+# client.update( "#fibrotrust just shared  "  "#{@tip.title} tip @ #{web_url}")
 
 
 # ------------------------------------------------------------------------------------------
@@ -146,6 +146,6 @@ private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tip_params
-      params.require(:tip).permit(:title, :votes, :difficulty_level, :condition_name_id, :symptom_name_id, :tip_type_id, :what_needed, :my_tip, :user_id,:tips_url ,:tag_list, :tag,:name )
+      params.require(:tip).permit(:title, :votes, :difficulty_level, :condition_name_id, :symptom_name_id, :tip_type_id, :what_needed, :my_tip, :user_id,:tips_url ,:tag_list, :tag)
     end
   end

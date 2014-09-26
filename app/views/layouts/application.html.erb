@@ -57,7 +57,11 @@
     </div>
   </div>
 <!-- sidebar -->
-
+<div class="row">
+<%= form_for(:search, url: search_path, method: :get) do |form| %>
+ <div class="large-8 columns" align="right"><%= form.text_field :term %></div>
+<div class="large-4 columns"><%= form.submit "Search Shouts", :class => "button tiny right"%></div>
+<% end %></div>
   <main class="row">
     <div class="large-3 columns">
       <%= render 'layouts/categories' %>
