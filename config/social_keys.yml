@@ -42,3 +42,7 @@ production:
   GMAIL_DOMAIN: "thawing-lake-7709.herokuapp.com"
   GMAIL_USERNAME: "support@chronicdiseases.org.uk"
   GMAIL_PASSWORD: "22CHaberek22"
+
+  AWS_BUCKET: "chroncop"
+  AWS_KEY: "KIAJTIBP6BX2AL6JSXQ"
+  AWS_SECRET: "k3obVAYDnlN5WS8Yx0ba1FKzVFSki5l6yAU0SIkoY"

@@ -19,12 +19,13 @@ SociaLoginRails::Application.configure do
   # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
   # config.action_dispatch.rack_cache = true
 # config/environments/production.rb
+
 config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
-    :bucket => ENV['chroncop'],
-    :access_key_id => ENV['KIAJTIBP6BX2AL6JSXQ'],
-    :secret_access_key => ENV['k3obVAYDnlN5WS8Yx0ba1FKzVFSki5l6yAU0SIkoY']
+    :bucket => ENV['AWS_BUCKET'],
+    :access_key_id => ENV['AWS_KEY'],
+    :secret_access_key => ENV['AWS_SECRET']
   }
 }
   # Disable Rails's static asset server (Apache or nginx will already do this).
