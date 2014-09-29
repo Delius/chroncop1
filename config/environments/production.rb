@@ -22,11 +22,12 @@ SociaLoginRails::Application.configure do
 
 config.paperclip_defaults = {
   :storage => :s3,
+  s3_host_name: => ['s3-eu-west-1.amazonaws.com'],
   :s3_credentials => {
     :bucket => ENV['AWS_BUCKET'],
     :access_key_id => ENV['AWS_KEY'],
-    :secret_access_key => ENV['AWS_SECRET'],
-    :s3_host_name => ENV['s3_host_name']
+    :secret_access_key => ENV['AWS_SECRET']
+    
   }
 }
   # Disable Rails's static asset server (Apache or nginx will already do this).
