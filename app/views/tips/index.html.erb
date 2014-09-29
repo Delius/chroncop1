@@ -22,7 +22,7 @@
       <% @tips.each do |tip| %>
 
       <tr>
-        <td ><strong><h4><%= tip.title %></h4></strong> <br>
+        <td ><strong><h4><%= link_to tip.title,  tip %></h4></strong> <br>
 
 By: <%= tip.user.username   %> <br>
 <%= link_to time_ago_in_words(tip.created_at ), tip %> ago.
