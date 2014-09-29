@@ -25,8 +25,8 @@ config.paperclip_defaults = {
   :s3_credentials => {
     :bucket => ENV['AWS_BUCKET'],
     :access_key_id => ENV['AWS_KEY'],
-    :secret_access_key => ENV['AWS_SECRET']
-    :s3_host_name => ENV['s3_host_name'],
+    :secret_access_key => ENV['AWS_SECRET'],
+    :s3_host_name => ENV['s3_host_name']
   }
 }
   # Disable Rails's static asset server (Apache or nginx will already do this).
