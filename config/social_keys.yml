@@ -44,5 +44,6 @@ production:
   GMAIL_PASSWORD: "22CHaberek22"
 
   AWS_BUCKET: "chroncop"
+  s3_host_name: "s3.amazonaws.com"
   AWS_KEY: "AKIAJTIBP6BX2AL6JSXQ"
   AWS_SECRET: "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"
