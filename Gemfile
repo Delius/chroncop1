@@ -22,7 +22,7 @@ gem 'bootstrap-will_paginate', '0.0.9'
 #gem 'activerecord-reputation-system', require: 'reputation_system'
 gem "binding_of_caller"
 gem 'acts-as-taggable-on'
-gem 'paperclip'
+
 gem 'aws-sdk'
 group :production do
   gem 'pg', '0.15.1'
