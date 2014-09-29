@@ -12,7 +12,7 @@ class Tip < ActiveRecord::Base
 	
 	has_reputation :votes, source: :user, aggregated_by: :sum
 	
-
+	default_scope -> { order('created_at DESC') }
 # authority system 
 
 
