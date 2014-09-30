@@ -82,7 +82,7 @@ web_url = Rails.application.routes.url_helpers.tips_url(:host => 'chronicillness
 
 # posts a tweet to twitter uncomment on production server
 
-client.update( "#fibrotrust just shared  "  "#{@tip.title} tip @ #{web_url}")
+client.update( "#fibrotrust   "  "#{@tip.title} tip @ #{web_url}")
 
 
 # ------------------------------------------------------------------------------------------
