@@ -1,5 +1,8 @@
 <div class="panel callout radius">
-  
+<% if user.email != nil %>
+				<%= gravatar user %>	
+				<a href='http://gravatar.com/emails'>Change</a>	
+				<% end %>
    <%= link_to user.username, user %> tips to date: [ <%= user.tips.count %> ]
   <% if current_user.admin? && !current_user?(user) %>
     | <%= link_to "delete", user, method: :delete,

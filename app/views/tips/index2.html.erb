@@ -1,0 +1,66 @@
+h1 class="text-center">Coping Tips List</h1>
+
+
+
+
+<% @tips.each do |tip| %>
+
+         <div >
+
+
+
+
+          <ul class="pricing-table">
+            <li class="title"><%= link_to tip.title,  tip %></li>
+
+            <li class="price"><%= link_to tip.user.username   %><br>
+              <h6><%= link_to time_ago_in_words(tip.created_at ), tip %> ago.</h6>
+              <span class="label"><%= pluralize tip.reputation_for(:votes).to_i, "vote" %> </span>
+              <% if user_signed_in? %>
+              <span class="success label"><%= link_to "up", vote_tip_path(tip, type: "up"), method: "post" %></span>
+              <span class="warning label"><%= link_to "down", vote_tip_path(tip, type: "down"), method: "post" %></span>
+              <% end %>
+            </li>
+
+            <li class="description"><%= tip.my_tip.truncate(50, omission: '... (continued)') %></li>
+
+            <li class="bullet-item">
+              <span><%= tip.condition_name.name %></span>
+              <span><%= tip.symptom_name.name %></span></li>
+              <li class="bullet-item"><% for tag in tip.tags %>
+               <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+               <% end %>
+             </li>
+             <!-- <li class="bullet-item">20 Users</li> -->
+             <li class="cta-button"><%= link_to 'Show', tip, class: 'button tiny radius success' %>
+              <% if user_signed_in? %>
+              <% if tip.user == current_user %>
+              <%= link_to 'Edit', edit_tip_path(tip), class: 'button tiny radius success' %>
+              <%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button tiny radius alert' %></td>
+              <% end %>
+              <% end %>
+            </li>
+          </ul>
+
+          
+
+        </div>
+<% end %>
+
+
+</div>
+
+</div>
+        
+      
+      <div class="fb-like" data-href="https://www.facebook.com/pages/FibroTrust/482527011777039" data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="true"></div>
+    
+
+
+    <%= link_to 'Share your Tip', new_tip_path, class: 'button  radius success' %>
+
+    <br>
+
+
+
+
