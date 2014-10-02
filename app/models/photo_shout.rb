@@ -6,5 +6,6 @@ class PhotoShout < ActiveRecord::Base
 
 def index
 	image_file_name
+	description
 end
 end

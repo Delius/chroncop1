@@ -7,7 +7,7 @@ class Search
 	end
 
 	def shouts
-		Shout.text_shouts.where(content_id: text_shouts)
+		Shout.photo_shouts.where(content_id: photo_shouts)
 	end
 
 
@@ -21,8 +21,8 @@ class Search
 
 	private
 	
-	def text_shouts
-		TextShout.where("body LIKE ?", search_term)
+	def photo_shouts
+		PhotoShout.where("description LIKE ?", search_term)
 	end
 	def search_term
 		"%#{term}%"

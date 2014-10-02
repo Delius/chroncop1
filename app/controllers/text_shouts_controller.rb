@@ -20,6 +20,6 @@ class TextShoutsController < ApplicationController
 
 
 	def text_shout_parameters
-		params.require(:text_shout).permit(:body)
+		params.require(:text_shout).permit(:body, :description)
 	end
 end

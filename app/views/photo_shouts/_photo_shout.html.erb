@@ -1,1 +1,12 @@
+<% if photo_shout.description.present? &&  photo_shout.image.present? %>
+	<%= shouterize(photo_shout.description) %>
+	<%= link_to image_tag(photo_shout.image.url(:shout)), photo_shout.image.url %>
+<% else  %>
+<% if photo_shout.description.present? %>
+<%= shouterize(photo_shout.description) %>
+<% else  %>
+<% if photo_shout.image.present? %>
 <%= link_to image_tag(photo_shout.image.url(:shout)), photo_shout.image.url %>
+<% end %>
+<% end %>
+<% end %>
