@@ -2,10 +2,11 @@ SociaLoginRails::Application.routes.draw do
 
 
 
+  get "painmanager/index"
   get "home/index"
   resources :tips
-  root :to => "tips#index", via: :get
-
+  # root :to => "tips#index", via: :get
+  root :to => "painmanager#index", via: :get
   
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config

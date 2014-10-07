@@ -93,7 +93,7 @@ group :development, :test do
   #gem 'xray-rails'
     gem 'rails_layout'
   gem 'spring'
-  
+  gem 'backbone-on-rails'
   
 
   #gem 'timecop'
