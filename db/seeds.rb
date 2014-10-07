@@ -11,7 +11,7 @@ condition_names = ["Fibromyalgia", "Arthritis","Lupus","Chronic Fatigue Syndrome
 Irritable bowel syndrome","Depression","Obesity"]
 condition_names.each{ |d| ConditionName.where(:name => d).first_or_create }
 
-symptom_names = ["Widespread pain", "Extreme sensitivity", "Stiffness","Fatigue","Poor sleep quality","Fibro-fog", "Headaches","Dizziness","Restless legs","Anxiety"]
+symptom_names = ["Widespread pain", "Extreme sensitivity", "Stiffness","Fatigue","Poor sleep quality","Fibro-fog", "Headaches","Dizziness","Restless legs","Anxiety","Other"]
 symptom_names.each{ |d| SymptomName.where(:name => d).first_or_create }
 
 tip_types = ["Exercise", "Resistance exercises","Pacing","Relaxation","Sleeping Habits"]

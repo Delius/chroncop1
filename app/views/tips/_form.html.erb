@@ -33,15 +33,15 @@
     <%= f.select( :symptom_name_id,
   options_from_collection_for_select(SymptomName.all, :id, :name),
   {:prompt => 'Please Choose'}, :class => "form-control") %>
-  </div>
+
  
- <!--  <div class="field">
-    <%= f.label :what_is_needed_? %><br>
-    <%= f.text_area :what_needed %>
-  </div> -->
+ <div class="field">
+    <%= f.label :symptom %> [If other symptom]<br>
+    <%= f.text_field :what_needed %>
+  </div> 
   <div class="field">
     <%= f.label :my_tip %>  [ tip description ] <br>
-    <%= f.text_area :my_tip %>
+    <%= f.text_area(:my_tip, :rows => 15 )%>
   </div>
   <div class="row">
   

@@ -16,7 +16,12 @@
   </div>
   <p>
     <strong>Symptom name:</strong>
+    <% if @tip.symptom_name.name = "Other" %>
+    <%= @tip.what_needed %>
+
+    <% else %>
     <%= @tip.symptom_name.name %>
+    <% end %>
   </p>
 
 
